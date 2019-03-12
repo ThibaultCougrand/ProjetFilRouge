@@ -1,0 +1,45 @@
+.texte{
+    display: flex;
+    justify-content: center;
+}
+.texte :nth-child(1) {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+}
+
+.texte :nth-child(2) {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.texte :nth-child(3) {
+    font-family: 'PT Sans', sans-serif;
+    font-style: italic;
+    font-size: 3em;
+}
+
+.color {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#color1 {
+    width: 100px;
+    height: 100px;
+    background: #620f0f;
+}
+
+#color2 {
+    background: #6f6f6f;
+    width: 100px;
+    height: 100px;
+
+}
+
+#color3 {
+    background: black;
+    width: 100px;
+    height: 100px;
+}
+
