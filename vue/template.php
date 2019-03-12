@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php include "vue/navbar.php"?>
-        <?php include "controler/controler-content" ?>
+        <?php include "controler/controler-content.php" ?>
         <?php include "vue/footer.php" ?>
         <script src="../js/main.js" type="text/javascript"></script>
     </body>
