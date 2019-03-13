@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>nesti</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text.css" href="css/style.css" media="all">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">      
     </head>
     <body>
         <header style="background-image: url(<?php $image ?>)"></header>
