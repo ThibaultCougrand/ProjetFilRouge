@@ -1,7 +1,12 @@
 {
 "version": 3,
+<<<<<<< HEAD
 "mappings": "AAAA,IAAI;EACA,WAAW,EAAE,qBAAqB;;ACDtC;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE",
 "sources": ["../scss/template.scss","../scss/navbar.scss","../scss/home.scss","../scss/account.scss","../scss/cart.scss","../scss/ingredients.scss","../scss/one-recipe.scss","../scss/recipes.scss","../scss/resume-cart.scss","../scss/sign-in.scss","../scss/sign-up.scss","../scss/footer.scss"],
+=======
+"mappings": "AAAA,CAAC;EACG,OAAO,EAAC,CAAC;EACT,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;EACtB,kBAAkB,EAAE,UAAU;;AAElC,IAAI;EACA,WAAW,EAAE,qBAAqB;;AAEtC,MAAO;EACH,MAAM,EAAE,IAAI;;ACVhB,MAAM;EACF,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,MAAM",
+"sources": ["../scss/template.scss","../scss/footer.scss"],
+>>>>>>> master
 "names": [],
 "file": "style.css"
 }
