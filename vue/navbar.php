@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 <nav>
     <ul>
     <li><a href="index.php?loc=home.php">Accueil</li></a>
@@ -9,4 +6,3 @@
     <li><a href="index.php?loc=cart.php">Panier</li></a>
 </ul>
 </nav>
->>>>>>> Gestion
