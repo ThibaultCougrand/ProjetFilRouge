@@ -10,6 +10,32 @@ body {
 header {
   height: 20vh; }
 
+/************* ICI NAVBAR **************/
+
+nav {
+  position: sticky; }
+
+nav ul {
+  background: #620f0f;
+  display: flex;
+  align-content: baseline;
+  justify-content: space-evenly;
+  height: 20vh;
+  align-items: center; }
+
+nav ul li {
+  list-style: none;
+  font-size: 1.5em; }
+
+nav ul li a:link {
+  text-decoration: none;
+  color: white; }
+
+nav ul li a:visited {
+  color: white; }
+header {
+  height: 20vh; }
+
 /*************** FOOTER ************/
 
 footer {
@@ -44,6 +70,3 @@ footer h2 a {
 /*************** END-FOOTER ************/
 
 /*# sourceMappingURL=style.css.map */
-header {
-  height: 20vh; }
-
