@@ -1,7 +1,10 @@
 /************* ICI NAVBAR **************/
+nav {
+    position: sticky;
+}
+
 nav ul {
-background: #6f6f6f;
-color: #620f0f;
+background: #620f0f;
 display: flex;
 align-content: baseline;
 justify-content: space-evenly;
@@ -15,6 +18,6 @@ nav ul li {
 }
 nav ul li a:link {
     text-decoration: none;
-    color: #620f0f;
+    color: white;
 }
 
