@@ -16,6 +16,19 @@ footer i {
         color: #3b5998;
     }
 }
+.fa-twitter-square{
+    transition: 1s;
+    &:hover{
+        color: rgb(0, 172, 237);
+    }
+}
+.instagram{
+    transition: 1s;
+    background-image: url("../asset/1024px-Instagram_logo_2016.svg.png");
+    &:hover{
+        
+    }
+}
 footer h2 a {
     color: #620f0f;
 }
