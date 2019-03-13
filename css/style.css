@@ -7,13 +7,23 @@
 body {
   font-family: 'PT Sans', sans-serif; }
 
+/************* ICI NAVBAR **************/
 nav ul {
-  background: black;
-  color: white;
+  background: #6f6f6f;
+  color: #620f0f;
   display: flex;
   align-content: baseline;
   justify-content: space-evenly;
-  height: 20vh; }
+  height: 20vh;
+  align-items: center; }
+
+nav ul li {
+  list-style: none;
+  font-size: 1.5em; }
+
+nav ul li a:link {
+  text-decoration: none;
+  color: #620f0f; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
