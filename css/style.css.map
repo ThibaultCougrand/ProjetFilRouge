@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF,IAAI;EACA,WAAW,EAAE,qBAAqB",
-"sources": ["../scss/account.scss","../scss/cart.scss","../scss/footer.scss","../scss/home.scss","../scss/ingredients.scss","../scss/navbar.scss","../scss/one-recipe.scss","../scss/recipes.scss","../scss/resume-cart.scss","../scss/sign-in.scss","../scss/sign-up.scss","../scss/template.scss"],
+"mappings": "AAAA,IAAI;EACA,WAAW,EAAE,qBAAqB;;ACAtC,MAAO;EACP,UAAU,EAAE,KAAK;;ACFjB;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE;ACRF;;;;EAIE;AACF;;;EAGE",
+"sources": ["../scss/template.scss","../scss/navbar.scss","../scss/home.scss","../scss/account.scss","../scss/cart.scss","../scss/ingredients.scss","../scss/one-recipe.scss","../scss/recipes.scss","../scss/resume-cart.scss","../scss/sign-in.scss","../scss/sign-up.scss"],
 "names": [],
 "file": "style.css"
 }
