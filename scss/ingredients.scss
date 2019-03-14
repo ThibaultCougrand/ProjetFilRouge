@@ -1,0 +1,23 @@
+/************ ICI DEBUT INGREDIENTS *************/
+.container-ing {
+    display: flex;
+}
+.ingredient {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.container-ing > aside {
+    width: 33vw;
+}
+
+
+.ingredient figure img {
+    width: 85%;
+} 
+
+.ingredient figure figcaption {
+    text-align: center;
+}
+
+
+/*************** ICI FIN INGREDIENTS ***********/
