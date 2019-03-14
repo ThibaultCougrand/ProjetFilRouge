@@ -5,7 +5,11 @@
     <div class="ingredient">
         <figure>
             <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
+            <figcaption>Ici ingrédient
+            <button>-</button>
+            <div>0</div>
+            <button>+</button>
+            </figcaption>
         </figure>
         <figure>
             <img src="asset/recipes.jpg" alt="">
