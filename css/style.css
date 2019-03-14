@@ -8,10 +8,12 @@ body {
   font-family: 'PT Sans', sans-serif; }
 
 header {
-  height: 20vh; }
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
 /************* ICI NAVBAR **************/
-
 nav {
   position: sticky; }
 
@@ -33,11 +35,9 @@ nav ul li a:link {
 
 nav ul li a:visited {
   color: white; }
-header {
-  height: 20vh; }
 
+/******************** END NAVBAR ********************/
 /*************** FOOTER ************/
-
 footer {
   display: flex;
   justify-content: space-between;
@@ -49,8 +49,7 @@ footer i {
 
 .fa-facebook {
   transition: 1s; }
-
-.fa-facebook:hover {
+  .fa-facebook:hover {
     color: #3b5998; }
 
 .fa-twitter-square {
