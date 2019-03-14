@@ -10,8 +10,71 @@ body {
 header {
   height: 20vh; }
 
+/************* ICI NAVBAR **************/
+
+nav {
+  position: sticky; }
+
+nav ul {
+  background: #620f0f;
+  display: flex;
+  align-content: baseline;
+  justify-content: space-evenly;
+  height: 20vh;
+  align-items: center; }
+
+nav ul li {
+  list-style: none;
+  font-size: 1.5em; }
+
+nav ul li a:link {
+  text-decoration: none;
+  color: white; }
+
+nav ul li a:visited {
+  color: white; }
+header {
+  height: 20vh; }
+
+/*************** FOOTER ************/
+
 footer {
-  height: 10vh;
-  background: yellow; }
+  display: flex;
+  justify-content: space-between;
+  height: 21vh;
+  background: #9c9c9c; }
+
+footer i {
+  color: #620f0f; }
+
+.fa-facebook {
+  transition: 1s; }
+
+.fa-facebook:hover {
+    color: #3b5998; }
+
+.fa-twitter-square {
+  transition: 1s; }
+  .fa-twitter-square:hover {
+    color: #00aced; }
+
+footer h2 a {
+  color: #620f0f; }
+
+.icones {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.mention {
+  font-size: 0.5em;
+  display: flex;
+  flex-direction: column-reverse; }
+
+.mention h2 a:visited {
+  color: #620f0f; }
+
+/*************** END-FOOTER ************/
 
 /*# sourceMappingURL=style.css.map */

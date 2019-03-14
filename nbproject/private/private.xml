@@ -5,8 +5,9 @@
         <group>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/vue/home.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/vue/template.php</file>
-            <file>file:/opt/lampp/htdocs/ProjetFilRouge/controler/controler-content.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/scss/template.scss</file>
+            <file>file:/opt/lampp/htdocs/ProjetFilRouge/controler/controler-content.php</file>
+            <file>file:/opt/lampp/htdocs/ProjetFilRouge/vue/navbar.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/index.php</file>
         </group>
     </open-files>
