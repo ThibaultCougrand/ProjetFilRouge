@@ -15,6 +15,7 @@
         <?php include "controler/controler-content.php" ?>
         </section>
         <?php include "vue/footer.php" ?>
-        <script src="../js/main.js" type="text/javascript"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/main.js" type="text/javascript"></script>
     </body>
 </html>
