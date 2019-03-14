@@ -1,0 +1,23 @@
+.contener-flex-sign-in {
+    display: flex;
+    justify-content: space-around;
+}
+.contener-flex-sign-in div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.connection, .inscription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em 0;
+}
+.connection input, .inscription input {
+    margin-bottom: 1em;
+}
+.divider {
+    background-color: #620f0f;
+    width: .15em;
+    height: 23em;
+}

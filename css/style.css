@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -8,7 +9,10 @@ body {
   font-family: 'PT Sans', sans-serif; }
 
 header {
-  height: 20vh; }
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
 
 /************* ICI NAVBAR **************/
 nav {
@@ -16,24 +20,70 @@ nav {
 
 nav ul {
   background: #620f0f;
+  height: 10vh;
   display: flex;
-  align-content: baseline;
-  justify-content: space-evenly;
-  height: 20vh;
+  justify-content: space-around;
   align-items: center; }
 
 nav ul li {
   list-style: none;
   font-size: 1.5em; }
 
-nav ul li a:link {
+nav ul li a {
   text-decoration: none;
-  color: white; }
+  color: white;
+  padding: 0 3em;
+  transition: .5s;
+  border-radius: .8em; }
 
-nav ul li a:visited {
-  color: white; }
+nav ul li a:hover {
+  background-color: white;
+  color: #620f0f; }
 
 /******************** END NAVBAR ********************/
+/**************** ICI HOME CSS *********/
+.presentation {
+  display: flex; }
+
+article aside img {
+  width: 43vw;
+  height: 100%; }
+
+.text-home {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2em;
+  font-size: large; }
+
+/************ ICI FIN HOME CSS ************/
+/************ ICI DEBUT INGREDIENTS *************/
+.container-ing {
+  display: flex; }
+
+.ingredient {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+
+.container-ing > aside {
+  width: 33vw; }
+
+.ingredient figure img {
+  width: 85%; }
+
+.ingredient figure figcaption {
+  display: flex;
+  justify-content: space-evenly; }
+
+.wrap-button {
+  display: flex; }
+
+.wra⁻button input {
+  width: 2vw; }
+
+/*************** ICI FIN INGREDIENTS ***********/
 .recettes {
   display: flex; }
 
@@ -52,6 +102,29 @@ nav ul li a:visited {
 
 .filtres-recettes ul li {
   cursor: pointer; }
+
+.contener-flex-sign-in {
+  display: flex;
+  justify-content: space-around; }
+
+.contener-flex-sign-in div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.connection, .inscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em 0; }
+
+.connection input, .inscription input {
+  margin-bottom: 1em; }
+
+.divider {
+  background-color: #620f0f;
+  width: .15em;
+  height: 23em; }
 
 /*************** FOOTER ************/
 footer {
