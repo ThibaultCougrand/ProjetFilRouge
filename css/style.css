@@ -40,30 +40,6 @@ nav ul li a:hover {
   color: #620f0f; }
 
 /******************** END NAVBAR ********************/
-/******************** PAGE CONNECTION *******************/
-.contener-flex-sign-in {
-  display: flex;
-  justify-content: space-around; }
-
-.contener-flex-sign-in div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
-
-.connection, .inscription {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 2em 0; }
-
-.connection input, .inscription input {
-  margin-bottom: 1em; }
-
-.divider {
-  background-color: #620f0f;
-  width: .15em;
-  height: 23em; }
-/******************** END PAGE CONNECTION *******************/
 /**************** ICI HOME CSS *********/
 .presentation {
   display: flex; }
@@ -100,6 +76,48 @@ article aside img {
   text-align: center; }
 
 /*************** ICI FIN INGREDIENTS ***********/
+.recettes {
+  display: flex; }
+
+.liste-recette {
+  width: 70%; }
+
+.liste-recette h1 {
+  text-align: center;
+  font-size: 1.5em; }
+
+.filtre-recette {
+  height: 95%;
+  width: 30%;
+  background: #9c9c9c;
+  font-size: 2em; }
+
+.filtre-recette ul li {
+  cursor: pointer; }
+
+.contener-flex-sign-in {
+  display: flex;
+  justify-content: space-around; }
+
+.contener-flex-sign-in div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.connection, .inscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em 0; }
+
+.connection input, .inscription input {
+  margin-bottom: 1em; }
+
+.divider {
+  background-color: #620f0f;
+  width: .15em;
+  height: 23em; }
+
 /*************** FOOTER ************/
 footer {
   display: flex;
