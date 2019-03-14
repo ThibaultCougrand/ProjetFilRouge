@@ -1,8 +1,9 @@
 <nav>
     <ul>
-    <li><a href="index.php?loc=home.php">Accueil</li></a>
-    <li><a href="index.php?loc=recipes.php">Nos recettes</li></a>
-    <li><a href="index.php?loc=sign-in.php">Connexion</li></a>
-    <li><a href="index.php?loc=cart.php">Panier</li></a>
-</ul>
-</nav>
+        <li><a href="index.php?loc=home">Accueil</li></a>
+        <li><a href="index.php?loc=recipes">Nos recettes</li></a>
+        <li><a href="index.php?loc=ingredients">Produits</li></a>
+        <li><a href="index.php?loc=sign-in">Connexion</li></a>
+        <li><a href="index.php?loc=cart">Panier</li></a>
+    </ul>
+</nav> 
