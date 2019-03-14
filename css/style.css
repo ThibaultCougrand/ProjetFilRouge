@@ -50,6 +50,9 @@ nav ul li a:visited {
   background: #9c9c9c;
   font-size: 2em; }
 
+.filtre-recette ul li {
+  cursor: pointer; }
+
 /*************** FOOTER ************/
 footer {
   display: flex;
