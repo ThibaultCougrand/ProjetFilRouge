@@ -22,11 +22,8 @@ footer i {
         color: rgb(0, 172, 237);
     }
 }
-.instagram{
-    transition: 1s;
-    background-image: url("../asset/1024px-Instagram_logo_2016.svg.png");
+.fa-instagram{
     &:hover{
-        
     }
 }
 footer h2 a {
@@ -45,5 +42,7 @@ footer h2 a {
     display: flex;
     flex-direction: column-reverse;
 }
-
+.mention h2 a:visited {
+color: #620f0f;
+}
 /*************** END-FOOTER ************/
