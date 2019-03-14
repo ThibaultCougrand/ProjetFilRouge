@@ -19,22 +19,25 @@ nav {
 
 nav ul {
   background: #620f0f;
+  height: 10vh;
   display: flex;
-  align-content: baseline;
-  justify-content: space-evenly;
-  height: 20vh;
+  justify-content: space-around;
   align-items: center; }
 
 nav ul li {
   list-style: none;
   font-size: 1.5em; }
 
-nav ul li a:link {
+nav ul li a {
   text-decoration: none;
-  color: white; }
+  color: white;
+  padding: 0 3em;
+  transition: .5s;
+  border-radius: .8em; }
 
-nav ul li a:visited {
-  color: white; }
+nav ul li a:hover {
+  background-color: white;
+  color: #620f0f; }
 
 /******************** END NAVBAR ********************/
 .contener-flex-sign-in {
