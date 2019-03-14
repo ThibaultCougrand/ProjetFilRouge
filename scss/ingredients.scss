@@ -2,17 +2,24 @@
 .container-ing {
     display: flex;
 }
+
 .ingredient {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.container-ing > aside {
+
+.container-ing>aside {
     width: 33vw;
+    overflow: hidden;
+    background: whitesmoke;
+    border: 11px solid white;
+    border-bottom: 56px solid white;
+    border-right: 10px solid white;
 }
 
 .ingredient figure img {
-    width: 85%;
-} 
+    width: 99%;
+}
 
 .ingredient figure figcaption {
     display: flex;
@@ -21,10 +28,12 @@
 
 .wrap-button {
     display: flex;
+    justify-content: center;
 }
 
-.wra⁻button input {
+.wrap-button input {
     width: 2vw;
+    text-align: center;
 }
 
 
