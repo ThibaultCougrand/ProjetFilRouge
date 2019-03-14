@@ -1,0 +1,19 @@
+.recettes{
+    display: flex;
+}
+.liste-recette{
+    width: 70%;
+}
+.liste-recette h1{
+    text-align: center;
+    font-size: 1.5em;
+}
+.filtres-recettes{
+    height: 95%;
+    width: 30%;
+    background: rgb(156, 156, 156);
+    font-size: 2em;
+}
+.filtres-recettes ul li {
+    cursor: pointer;
+}
