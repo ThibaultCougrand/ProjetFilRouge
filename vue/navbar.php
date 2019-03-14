@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+<nav>
+    <ul>
+    <li><a href="index.php?loc=home">Accueil</li></a>
+    <li><a href="index.php?loc=recipes">Nos recettes</li></a>
+    <li><a href="index.php?loc=sign-in">Connexion</li></a>
+    <li><a href="index.php?loc=cart">Panier</li></a>
+</ul>
+</nav>

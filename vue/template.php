@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">      
     </head>
     <body>
-        <header style="background-image: url(<?php $image ?>)"></header>
+        <header style="background-image: url(<?= $image;?>)"></header>
         <?php include "vue/navbar.php"?>
         <section>
         <?php include "controler/controler-content.php" ?>
