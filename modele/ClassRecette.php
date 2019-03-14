@@ -40,4 +40,8 @@ class Recette{
 
         return $this;
     }
+
+    public function toArray(){
+        return ["id" => $this->id(), "name" => $this->name(), "img" =>  $this->image()];
+    }
 }
