@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -73,7 +74,14 @@ article aside img {
   width: 85%; }
 
 .ingredient figure figcaption {
-  text-align: center; }
+  display: flex;
+  justify-content: space-evenly; }
+
+.wrap-button {
+  display: flex; }
+
+.wra⁻button input {
+  width: 2vw; }
 
 /*************** ICI FIN INGREDIENTS ***********/
 .recettes {
@@ -86,13 +94,13 @@ article aside img {
   text-align: center;
   font-size: 1.5em; }
 
-.filtre-recette {
+.filtres-recettes {
   height: 95%;
   width: 30%;
   background: #9c9c9c;
   font-size: 2em; }
 
-.filtre-recette ul li {
+.filtres-recettes ul li {
   cursor: pointer; }
 
 .contener-flex-sign-in {
