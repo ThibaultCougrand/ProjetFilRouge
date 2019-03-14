@@ -10,13 +10,21 @@
     width: 33vw;
 }
 
-
 .ingredient figure img {
     width: 85%;
 } 
 
 .ingredient figure figcaption {
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.wrap-button {
+    display: flex;
+}
+
+.wra⁻button input {
+    width: 2vw;
 }
 
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -67,7 +68,14 @@ article aside img {
   width: 85%; }
 
 .ingredient figure figcaption {
-  text-align: center; }
+  display: flex;
+  justify-content: space-evenly; }
+
+.wrap-button {
+  display: flex; }
+
+.wra⁻button input {
+  width: 2vw; }
 
 /*************** ICI FIN INGREDIENTS ***********/
 /*************** FOOTER ************/
