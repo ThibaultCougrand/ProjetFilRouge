@@ -1,4 +1,6 @@
 $(".un-filtre").click(function () {
+    reset = $("#les-recettes");
+    reset.html("");
     console.log("salut");
     $.post(
         'ajax.php', {
@@ -17,9 +19,9 @@ $(".un-filtre").click(function () {
                     figcaption.textContent = element.name;
                     figure.append(img);
                     figure.append(figcaption);
-                    $(".les-recettes").append(figure);
+                    $("#les-recettes").append(figure);
                 });
-            }else{
+            } else {
                 console.log('pas tableau');
             }
 

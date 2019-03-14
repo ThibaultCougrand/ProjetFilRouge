@@ -18,7 +18,7 @@
     </aside>
     <div class="liste-recette">
         <h1>Nos Recettes</h1>
-        <article class="les-recettes">
+        <article id="les-recettes">
 
         </article>
     </div>
