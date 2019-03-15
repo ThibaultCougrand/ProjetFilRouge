@@ -110,6 +110,22 @@ article aside img {
 .filtres-recettes ul li {
   cursor: pointer; }
 
+#les-recettes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+
+#les-recettes figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.image-recette {
+  width: 19em;
+  height: 13em;
+  background-position: center;
+  background-size: cover; }
+
 .contener-flex-sign-in {
   display: flex;
   justify-content: space-around; }

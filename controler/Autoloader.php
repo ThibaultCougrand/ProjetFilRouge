@@ -11,4 +11,3 @@ class Autoloader
         spl_autoload_register(array(__CLASS__, 'autoload'));
     }
 }
-

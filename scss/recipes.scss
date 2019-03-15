@@ -1,19 +1,41 @@
-.recettes{
+.recettes {
     display: flex;
 }
-.liste-recette{
+
+.liste-recette {
     width: 70%;
 }
-.liste-recette h1{
+
+.liste-recette h1 {
     text-align: center;
     font-size: 1.5em;
 }
-.filtres-recettes{
+
+.filtres-recettes {
     height: 95%;
     width: 30%;
     background: rgb(156, 156, 156);
     font-size: 2em;
 }
+
 .filtres-recettes ul li {
     cursor: pointer;
+}
+
+#les-recettes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+ #les-recettes figure {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+} 
+.image-recette{
+    width: 19em;
+    height: 13em;
+    background-position: center;
+    background-size: cover;
 }
