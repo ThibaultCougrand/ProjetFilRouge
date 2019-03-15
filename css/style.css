@@ -125,13 +125,33 @@ article aside img {
   font-size: 1.5em; }
 
 .filtres-recettes {
-  height: 95%;
-  width: 30%;
-  background: #9c9c9c;
-  font-size: 2em; }
+  width: 30vw;
+  background: whitesmoke;
+  font-size: 2em;
+  display: flex;
+  justify-content: center; }
+
+.filtres-recettes ul {
+  list-style: none; }
 
 .filtres-recettes ul li {
   cursor: pointer; }
+
+#les-recettes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+
+#les-recettes figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.image-recette {
+  width: 22vw;
+  height: 25vh;
+  background-position: center;
+  background-size: cover; }
 
 .contener-flex-sign-in {
   display: flex;

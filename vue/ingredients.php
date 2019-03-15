@@ -1,6 +1,20 @@
+<?php if (!isset($ingredients)) {
+    $ingredients = [];
+}
+?>
 <article class="container-ing">
     <aside>
-        <p>ici categorie ingrédient</p>
+        <ul>
+            <?php
+            if(count($ingredients) > 0){
+                foreach ($ingredients as $value) {
+                    echo '<li class="un-filtre" data-id="' . $value->id() . '">' . $value->name() . '</li>';
+                }
+            }else {
+                echo ("error");
+            }
+            ?>
+        </ul>
     </aside>
     <div class="ingredient">
         <figure>
