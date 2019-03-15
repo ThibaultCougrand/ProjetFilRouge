@@ -1,7 +1,6 @@
 $(".un-filtre").click(function () {
     reset = $("#les-recettes");
     reset.html("");
-    console.log("salut");
     $.post(
         'ajax.php', {
             id: $(this).data("id"),
