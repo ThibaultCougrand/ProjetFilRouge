@@ -8,7 +8,7 @@
             <?php 
             if (count($categoryRecettes) > 0) {
                 foreach ($categoryRecettes as $value) {
-                    echo '<li class="un-filtre" data-id="' . $value->id() . '">' . $value->name() . '</li>';
+                    echo '<li class="taille-filtre" data-id="' . $value->id() . '">' . $value->name() . '</li>';
                 }
             } else {
                 echo ("error");
