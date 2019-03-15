@@ -4,7 +4,6 @@ class ClassRecette{
     private $name;
     private $description;
     private $image;
-
     function id()
     {
         return $this->id;
