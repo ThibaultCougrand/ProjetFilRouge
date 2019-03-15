@@ -26,5 +26,17 @@ class ModeleRecette extends ClassConnexion
         }
         return $array;
     }
+
+    public function lastRecipes(){
+        $array = [];
+        $req = parent::$bdd->query("SELECT recipe.name, recipe.image FROM recipe ORDER BY id DESC LIMIT 9 "); 
+        while ($donnees = $req->fetch()) {
+            $recette = new ClassRecette();
+            $recette->setName($donnees["name"]);
+            $recette->setImage($donnees["image"]);
+            array_push($array,$recette);
+        }
+        return $array;
+    }
 }
 

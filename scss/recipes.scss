@@ -18,9 +18,14 @@
     display: flex;
     justify-content: center;
 }
-.filtres-recettes ul  {
+
+.filtres-recettes ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
+
 .filtres-recettes ul li {
     cursor: pointer;
 }
@@ -30,13 +35,14 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
- #les-recettes figure {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-} 
-.image-recette{
+#les-recettes figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-recette {
     width: 19em;
     height: 13em;
     background-position: center;

@@ -109,7 +109,10 @@ article aside img {
   justify-content: center; }
 
 .filtres-recettes ul {
-  list-style: none; }
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
 
 .filtres-recettes ul li {
   cursor: pointer; }
