@@ -8,7 +8,7 @@
             <?php 
             if (count($categoryRecettes) > 0) {
                 foreach ($categoryRecettes as $value) {
-                    echo '<li class="taille-filtre" data-id="' . $value->id() . '">' . $value->name() . '</li>';
+                    echo '<li class="taille-filtre un-filtre" data-id="' . $value->id() . '">' . $value->name() . '</li>';
                 }
             } else {
                 echo ("error");
@@ -23,7 +23,7 @@
                 foreach ($recettes as  $value) {
                     ?>
                     <figure>
-                    <div class="image-recette" style="background-image: url(&quot;<?=$value->image();?>&quot;);">
+                    <div class="image-recette" data-id=<?= $value->id();?> style="background-image: url(&quot;<?=$value->image();?>&quot;);">
                 </div>
                 <figcaption><?=$value->name()?></figcaption>
                 </figure>

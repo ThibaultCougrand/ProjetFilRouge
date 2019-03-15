@@ -16,6 +16,7 @@ $(".un-filtre").click(function () {
                     figcaption = document.createElement('figcaption');
                     img.className ="image-recette";
                     img.style = "background-image: url("+element.img+")";
+                    img.setAttribute('data-id',element.id);
                     figcaption.textContent = element.name;
                     figure.append(img);
                     figure.append(figcaption);
