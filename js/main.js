@@ -1,7 +1,6 @@
 $(".un-filtre").click(function () {
     reset = $("#les-recettes");
     reset.html("");
-    console.log("salut");
     $.post(
         'ajax.php', {
             id: $(this).data("id"),
@@ -13,9 +12,10 @@ $(".un-filtre").click(function () {
                 results.forEach(element => {
                     console.log(element);
                     figure = document.createElement('figure');
-                    img = document.createElement('img');
+                    img = document.createElement('div');
                     figcaption = document.createElement('figcaption');
-                    img.src = element.img;
+                    img.className ="image-recette";
+                    img.style = "background-image: url("+element.img+")";
                     figcaption.textContent = element.name;
                     figure.append(img);
                     figure.append(figcaption);

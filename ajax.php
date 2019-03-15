@@ -1,8 +1,6 @@
 <?php
-include_once 'modele/ClassConnexion.php';
-include_once 'modele/ClassRecette.php';
-include_once 'modele/ModeleRecette.php';
-
+include_once 'controler/Autoloader.php';
+Autoloader::register();
 $uc = filter_input(INPUT_POST, 'uc');
 
 $data = [];
