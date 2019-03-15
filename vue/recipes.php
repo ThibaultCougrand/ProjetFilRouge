@@ -22,9 +22,10 @@
             <?php
                 foreach ($recettes as  $value) {
                     ?>
-                    <figure>
+                    <figure><a href="index.php?loc=one-recipe">
                     <div class="image-recette" data-id=<?= $value->id();?> style="background-image: url(&quot;<?=$value->image();?>&quot;);">
                 </div>
+                </a>
                 <figcaption><?=$value->name()?></figcaption>
                 </figure>
                 
