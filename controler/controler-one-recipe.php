@@ -1,4 +1,5 @@
 <?php
 $id = filter_input(INPUT_GET,'id');
-$ingredients = new ModeleOneRecipe();
-$list= $ingredients->ingredientsList($id);
+$recette = new ModeleOneRecipe();
+$list= $recette->ingredientsList($id);
+$uneRecette = $recette->recipe($id);

@@ -3,7 +3,7 @@
 }
 ?>
 <article class="recettes">
-    <aside class="filtres-recettes">
+    <aside class="container-aside">
         <ul>
             <?php 
             if (count($categoryRecettes) > 0) {

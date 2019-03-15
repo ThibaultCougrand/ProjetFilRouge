@@ -94,6 +94,19 @@ article aside img {
   text-align: center; }
 
 /*************** ICI FIN INGREDIENTS ***********/
+.container-uneRecette {
+  display: flex; }
+
+.ul-ingredient-list {
+  width: 33vw; }
+
+.un-ingredient {
+  display: flex;
+  justify-content: center; }
+
+.un-ingredient span {
+  width: 35%; }
+
 /******************* Recettes ***************/
 .recettes {
   display: flex; }
@@ -105,19 +118,19 @@ article aside img {
   text-align: center;
   font-size: 1.5em; }
 
-.filtres-recettes {
+.container-aside {
   width: 30vw;
   background: whitesmoke;
   display: flex;
   justify-content: center; }
 
-.filtres-recettes ul {
+.container-aside ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; }
 
-.filtres-recettes ul li {
+.container-aside ul li {
   cursor: pointer; }
 
 #les-recettes {

@@ -5,7 +5,7 @@ class ClassUnIngredient{
     private $qtx;
     private $price;
     private $unite;
-    public function getId()
+    public function id()
     {
         return $this->id;
     }
@@ -17,7 +17,7 @@ class ClassUnIngredient{
         return $this;
     }
 
-    public function getName()
+    public function name()
     {
         return $this->name;
     }
@@ -29,7 +29,7 @@ class ClassUnIngredient{
         return $this;
     }
 
-    public function getQtx()
+    public function qtx()
     {
         return $this->qtx;
     }
@@ -43,7 +43,7 @@ class ClassUnIngredient{
     }
 
    
-    public function getPrice()
+    public function price()
     {
         return $this->price;
     }
@@ -56,7 +56,7 @@ class ClassUnIngredient{
         return $this;
     }
  
-    public function getUnite()
+    public function unite()
     {
         return $this->unite;
     }
