@@ -1,3 +1,5 @@
 <?php 
 $modeleIngredients = new ModeleIngredients();
-$ingredients = $modeleIngredients->ingredientsCategory();
+$categories = $modeleIngredients->categoryOfIngredients();
+$ingredients = $modeleIngredients->allIngredients();
+

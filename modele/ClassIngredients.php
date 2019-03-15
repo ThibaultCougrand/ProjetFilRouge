@@ -6,6 +6,13 @@ class ClassIngredients
     private $name;
     private $description;
     private $image;
+    private $prix;
+    private $qtx_price;
+    private $unit;
+
+    public function affichePrix(){
+        return $this->prix .'€ pour '. $this->qtx_price() .' '. $this->unit();
+    }
 
     public function id()
     {
@@ -75,6 +82,9 @@ class ClassIngredients
      */
     public function setImage($image)
     {
+        if($image == null){
+            $image = "asset/ingredients.jpg";
+        }
         $this->image = $image;
 
         return $this;
@@ -83,5 +93,65 @@ class ClassIngredients
     public function toArray()
     {
         return ["id" => $this->id(), "name" => $this->name(), "img" =>  $this->image()];
+    }
+
+    /**
+     * Get the value of prix
+     */ 
+    public function prix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * Set the value of prix
+     *
+     * @return  self
+     */ 
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of qtx_price
+     */ 
+    public function qtx_price()
+    {
+        return $this->qtx_price;
+    }
+
+    /**
+     * Set the value of qtx_price
+     *
+     * @return  self
+     */ 
+    public function setQtx_price($qtx_price)
+    {
+        $this->qtx_price = $qtx_price;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of unit
+     */ 
+    public function unit()
+    {
+        return $this->unit;
+    }
+
+    /**
+     * Set the value of unit
+     *
+     * @return  self
+     */ 
+    public function setUnit($unit)
+    {
+        $this->unit = $unit;
+
+        return $this;
     }
 }
