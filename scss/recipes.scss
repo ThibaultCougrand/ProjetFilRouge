@@ -12,12 +12,15 @@
 }
 
 .filtres-recettes {
-    height: 95%;
-    width: 30%;
-    background: rgb(156, 156, 156);
+    width: 30vw;
+    background: whitesmoke;
     font-size: 2em;
+    display: flex;
+    justify-content: center;
 }
-
+.filtres-recettes ul  {
+    list-style: none;
+}
 .filtres-recettes ul li {
     cursor: pointer;
 }
