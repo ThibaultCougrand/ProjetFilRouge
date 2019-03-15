@@ -35,16 +35,15 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-#les-recettes figure {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-recette {
-    width: 19em;
-    height: 13em;
+ #les-recettes figure {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+} 
+.image-recette{
+    width: 22vw;
+    height: 25vh;
     background-position: center;
     background-size: cover;
 }
