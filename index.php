@@ -16,8 +16,11 @@ switch ($loc) {
     case 'recipes':
         include_once "controler/controler-recipes.php";
         break;
-    case 'signinup':
-        include_once 'controler/controler-signinup.php';
+    case 'signin':
+        include_once 'controler/controler-signin.php';
+        break;
+    case 'signup':
+        include_once 'controler/controler-signup.php';
         break;
     default:
         break;

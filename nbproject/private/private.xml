@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/ProjetFilRouge/modele/ClassSignInUp.php</file>
-            <file>file:/opt/lampp/htdocs/ProjetFilRouge/scss/recipes.scss</file>
+            <file>file:/opt/lampp/htdocs/ProjetFilRouge/controler/controler-signinup.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/vue/template.php</file>
-            <file>file:/opt/lampp/htdocs/ProjetFilRouge/modele/ModeleRecette.php</file>
+            <file>file:/opt/lampp/htdocs/ProjetFilRouge/modele/ClassUser.php</file>
+            <file>file:/opt/lampp/htdocs/ProjetFilRouge/vue/sign-in-up.php</file>
+            <file>file:/opt/lampp/htdocs/ProjetFilRouge/index.php</file>
         </group>
     </open-files>
 </project-private>

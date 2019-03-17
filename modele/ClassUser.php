@@ -4,7 +4,7 @@
  *
  * @author thibault
  */
-class ClassUser extends ClassConnexion{
+class ClassUser{
     private $id, $email, $password;
 
     function id()
@@ -31,36 +31,4 @@ class ClassUser extends ClassConnexion{
     {
         return $this->password = $password;
     }
-    public function verifLogin(){
-        try {
-            $req = parent::$bdd->prepare('SELECT `id` FROM `utilisateur` WHERE `email`=:email AND `password`=:password');
-            $result = $req->execute(array(
-                'email' => $this->email,
-                'password' => $this->password
-            ));
-            while($donnee = $req->fetch()) {
-                $this->id = $donnee['id'];
-                $message = "Vous etes connecter";
-                echo $id;
-            }
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-    }
-//    public function inscription() {
-//        $message = "raté";
-//        try {
-//            $req = parent::$bdd->prepare('INSERT INTO `utilisateur`( `login`, `password`) VALUES (:login,:password)');
-//            $result = $req->execute(array(
-//                'login' => $this->login,
-//                'password' => $this->hash($this->password)
-//            ));  
-//            if ($result == true) {
-//                $message = "Succes";
-//            }
-//        } catch (PDOException $e) {
-//            echo $e->getMessage();
-//        }
-//        echo '<h1>' . $message . '</h1> ';
-//    }
 }

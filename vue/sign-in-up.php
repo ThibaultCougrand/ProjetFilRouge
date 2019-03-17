@@ -1,6 +1,6 @@
 <div class="contener-flex-sign-in">
     <div><h3>Connexion</h3></div>
-    <form class="connection" action="index.php?loc=signinup" method="POST">
+    <form class="connection" action="index.php?loc=signup" method="POST">
         <label for="email">email:</label>
         <input type="email" id="email" name="emailCo">
         <label for="password">mot de passe:</label>
@@ -9,9 +9,9 @@
     </form>
     <div class="divider"></div>
     <div><h3>Inscription</h3></div>
-    <form class="inscription" action="controler/controler-signinup.php" method="POST">
+    <form class="inscription" action="index.php?loc=signin" method="POST">
         <label for="name">nom:</label>
-        <input type="text">
+        <input type="text" id="name">
         <label>prenom:</label>
         <input type="text">
         <label>email:</label>
