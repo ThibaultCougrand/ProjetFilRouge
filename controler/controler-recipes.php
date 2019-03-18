@@ -1,3 +1,4 @@
 <?php
 $modeleRecette = new ModeleRecette();
-$recettes = $modeleRecette->recipeCategory();
+$categoryRecettes = $modeleRecette->recipeCategory();
+$recettes = $modeleRecette->lastRecipes();
