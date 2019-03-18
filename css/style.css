@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
 
 body {
   font-family: 'PT Sans', sans-serif;
@@ -83,11 +88,34 @@ article aside img {
 
 .wrap-button {
   display: flex;
-  justify-content: center; }
+  justify-content: space-evenly;
+  align-items: center; }
 
 .wrap-button input {
   width: 2vw;
   text-align: center; }
+
+.ingredient div button {
+  display: flex;
+  justify-content: center;
+  max-width: 1%;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 40px; }
+
+.ingredient div button:hover {
+  background-color: #3e8e41; }
+
+.ingredient div button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px); }
 
 /*************** ICI FIN INGREDIENTS ***********/
 /***************** ONE RECIPE CSS ***************/
@@ -102,6 +130,9 @@ article aside img {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+
+.uneRecette {
+  width: 100%; }
 
 .uneRecette figure img {
   object-fit: contain; }
