@@ -74,6 +74,7 @@ article aside img {
   width: 33vw;
   overflow: hidden;
   background: whitesmoke;
+  justify-content: center;
   border: 11px solid white;
   border-bottom: 56px solid white;
   border-right: 10px solid white; }
