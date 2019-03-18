@@ -100,7 +100,8 @@ article aside img {
   display: flex; }
 
 .ul-ingredient-list {
-  width: 33vw; }
+  width: 33vw;
+  justify-content: unset !important; }
 
 .uneRecette figure {
   display: flex;
@@ -120,7 +121,8 @@ article aside img {
 
 .un-ingredient {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  padding: 2%; }
 
 .un-ingredient span {
   width: 35%; }

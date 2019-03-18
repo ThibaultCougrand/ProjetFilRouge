@@ -6,6 +6,7 @@
 
 .ul-ingredient-list {
     width: 33vw;
+    justify-content: unset !important;
 }
 
 .uneRecette figure {
@@ -31,6 +32,7 @@
 .un-ingredient {
     display: flex;
     justify-content: center;
+    padding: 2%;
 }
 
 .un-ingredient span {
