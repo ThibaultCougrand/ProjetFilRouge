@@ -94,11 +94,28 @@ article aside img {
   text-align: center; }
 
 /*************** ICI FIN INGREDIENTS ***********/
+/***************** ONE RECIPE CSS ***************/
 .container-uneRecette {
   display: flex; }
 
 .ul-ingredient-list {
   width: 33vw; }
+
+.uneRecette figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.uneRecette figure img {
+  object-fit: contain; }
+
+.uneRecette figure h1 {
+  text-align: center;
+  font-size: 3rem; }
+
+.uneRecette figcaption {
+  text-align: center;
+  font-size: 2rem; }
 
 .un-ingredient {
   display: flex;
@@ -107,6 +124,7 @@ article aside img {
 .un-ingredient span {
   width: 35%; }
 
+/***************** END ONE RECIPE CSS ***************/
 /******************* Recettes ***************/
 .recettes {
   display: flex; }
