@@ -1,89 +1,41 @@
+<?php if (!isset($ingredients)) {
+    $ingredients = [];
+}
+if (!isset($categories)) {
+    $categories =  [];
+}
+?>
 <article class="container-ing">
     <aside>
-        <p>ici categorie ingrédient</p>
+        <ul>
+            <?php
+            if (count($categories) > 0) {
+                foreach ($categories as $value) {
+                    echo '<li class="un-filtre" data-id="' . $value->id() . '">' . $value->name() . '</li>';
+                }
+            } else {
+                echo ("error");
+            }
+            ?>
+        </ul>
     </aside>
     <div class="ingredient">
+        <?php
+        foreach ($ingredients as $value) {
+         
+            ?>
         <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-                <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-            
-        </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
+            <img src="<?=$value->image();?>" alt="<?=$value->name();?>">
+            <figcaption><?=$value->name();?></figcaption>
             <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
+                <p><?=$value->affichePrix();?></p>
+                <button><i class="fas fa-cart-plus"></i></button>
+            </div>
+
         </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-            <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-        </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-            <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-        </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-            <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-        </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-            <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-        </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-            <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-        </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-            <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-        </figure>
-        <figure>
-            <img src="asset/recipes.jpg" alt="">
-            <figcaption>Ici ingrédient</figcaption>
-            <div class="wrap-button">
-                    <button>-</button>
-                    <input type="text" placeholder="0">
-                    <button>+</button>
-                </div>
-        </figure>
+        <?php 
+    }
+    ?>
+
     </div>
 </article> 

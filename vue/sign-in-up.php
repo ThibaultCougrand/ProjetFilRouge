@@ -1,25 +1,25 @@
 <div class="contener-flex-sign-in">
     <div><h3>Connexion</h3></div>
-    <form class="connection">
-        <label for="email">email:</label>
-        <input type="email" id="email" name="emailCo">
-        <label for="password">mot de passe:</label>
-        <input type="password" id="password" name="passwordCo">
+    <form class="connection" action="index.php?loc=signup" method="POST">
+        <label for="emailCo">email:</label>
+        <input type="email" id="emailCo" name="emailCo">
+        <label for="passwordCo">mot de passe:</label>
+        <input type="password" id="passwordCo" name="passwordCo">
         <br><button type="submit">Se connecter</button>
     </form>
     <div class="divider"></div>
     <div><h3>Inscription</h3></div>
-    <form class="inscription">
-        <label for="name">nom:</label>
-        <input type="text">
-        <label>prenom:</label>
-        <input type="text">
-        <label>email:</label>
-        <input type="email">
-        <label>mot de passe:</label>
-        <input type="password">
-        <label>verifier votre mot de passe:</label>
-        <input type="password">
+    <form class="inscription" action="index.php?loc=signin" method="POST">
+        <label for="nameIns">nom:</label>
+        <input type="text" id="nameIns" name="nameIns">
+        <label for="firstNameIns">prenom:</label>
+        <input type="text" id="firstNameIns" name="firstNameIns">
+        <label for="emailIns">email:</label>
+        <input type="email" id="emailIns" name="emailIns">
+        <label for="passwordIns">mot de passe:</label>
+        <input type="password" id="passwordIns" name="passwordIns">
+        <label for="verifPasswordIns">verifier votre mot de passe:</label>
+        <input type="password" id="verifPasswordIns" name="verifPasswordIns">
         <br><button type="submit">S'inscrire</button>
     </form>
 </div>
