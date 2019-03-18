@@ -6,17 +6,15 @@
  */
 class ModeleSignUp extends ClassConnexion {
 
-    public function verifLogin() {
+    public static function verifLogin($user) {
         try {
             $req = parent::$bdd->prepare('SELECT `id` FROM `utilisateur` WHERE `email`=:email AND `password`=:password');
             $result = $req->execute(array(
-                'email' => $this->email,
-                'password' => $this->password
+                'email' => $user->email,
+                'password' => $user->password
             ));
-            while ($donnee = $req->fetch()) {
-                $this->id = $donnee['id'];
-                $message = "Vous etes connecter";
-                echo $id;
+            while ($donnee = $result->fetch()) {
+                $user->id = $donnee['id'];
             }
         } catch (PDOException $e) {
             echo $e->getMessage();

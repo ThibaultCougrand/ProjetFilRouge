@@ -6,13 +6,12 @@
  */
 class ModeleSignInUp extends ClassConnexion {
 
-    public function inscription() {
-        $message = "raté";
+    public function inscription($user) {
         try {
-            $req = parent::$bdd->prepare('INSERT INTO `utilisateur`( `login`, `password`) VALUES (:login,:password)');
+            $req = parent::$bdd->prepare('INSERT INTO `utilisateur`( `email`, `password`) VALUES (:login,:password)');
             $result = $req->execute(array(
-                'login' => $this->login,
-                'password' => $this->hash($this->password)
+                'email' => $user->email,
+                'password' => $user->password
             ));
             if ($result == true) {
                 $message = "Succes";
@@ -20,7 +19,5 @@ class ModeleSignInUp extends ClassConnexion {
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-        echo '<h1>' . $message . '</h1> ';
     }
-
 }
