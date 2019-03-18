@@ -12,19 +12,24 @@ $(".un-filtre").click(function () {
                 results.forEach(element => {
                     console.log(element);
                     figure = document.createElement('figure');
+                    lien = document.createElement('a');
+                    lien.href = "index.php?loc=one-recipe&id="+element.id;
                     img = document.createElement('div');
                     figcaption = document.createElement('figcaption');
                     img.className ="image-recette";
                     img.style = "background-image: url("+element.img+")";
                     figcaption.textContent = element.name;
-                    figure.append(img);
+                    lien.append(img);
+                    figure.append(lien);
                     figure.append(figcaption);
                     $("#les-recettes").append(figure);
                 });
             } else {
                 console.log('pas tableau');
             }
-
         }
     )
+})
+$(".image-recette").click(function(){
+
 })

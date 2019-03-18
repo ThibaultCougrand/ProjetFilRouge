@@ -4,7 +4,7 @@ class ClassRecette{
     private $name;
     private $description;
     private $image;
-
+    private $time;
     function id()
     {
         return $this->id;
@@ -23,7 +23,7 @@ class ClassRecette{
     }
     function description()
     {
-        return $this->description();
+        return $this->description;
     }
     function setDescription($description)
     {
@@ -41,7 +41,19 @@ class ClassRecette{
         return $this;
     }
 
+    public function time()
+    {
+        return $this->time;
+    } 
+    public function setTime($time)
+    {
+        $this->time = $time;
+
+        return $this;
+    }
     public function toArray(){
         return ["id" => $this->id(), "name" => $this->name(), "img" =>  $this->image()];
     }
+    
+    
 }
