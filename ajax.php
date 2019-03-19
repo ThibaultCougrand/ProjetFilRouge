@@ -19,6 +19,7 @@ switch ($uc) {
         } else {
             $data['erreur'] =  "pas d'id";
         }
+        echo json_encode($data);
         break;
 
     default:
@@ -27,4 +28,3 @@ switch ($uc) {
 }
 
 
-echo json_encode($data);

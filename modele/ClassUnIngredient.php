@@ -5,6 +5,7 @@ class ClassUnIngredient{
     private $qtx;
     private $price;
     private $unite;
+    private $image;
     public function id()
     {
         return $this->id;
@@ -65,6 +66,16 @@ class ClassUnIngredient{
     public function setUnite($unite)
     {
         $this->unite = $unite;
+
+        return $this;
+    }
+    public function image()
+    {
+        return $this->image;
+    }
+    public function setImage($image)
+    {
+        $this->image = $image;
 
         return $this;
     }

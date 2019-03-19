@@ -8,15 +8,26 @@
     width: 33vw;
     justify-content: unset !important;
 }
+.ingredient-list{
+    flex-direction: column;
+    justify-content: unset !important;
+}
+.un-ingredient img {
+    width: 4vw;
+    height: 4vw;
+    object-fit: contain;
+}
 
 .uneRecette figure {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.uneRecette{
+
+.uneRecette {
     width: 100%;
 }
+
 .uneRecette figure img {
     object-fit: contain;
 }
@@ -34,6 +45,7 @@
 .un-ingredient {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 2%;
 }
 
