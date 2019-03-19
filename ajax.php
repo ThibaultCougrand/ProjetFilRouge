@@ -19,6 +19,7 @@ switch ($uc) {
         } else {
             $data['erreur'] =  "pas d'id";
         }
+        echo json_encode($data);
         break;
     case 'signup':
         $email = filter_input(INPUT_POST, 'email');
@@ -32,4 +33,3 @@ switch ($uc) {
 }
 
 
-echo json_encode($data);
