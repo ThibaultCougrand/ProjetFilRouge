@@ -7,7 +7,7 @@
  */
 class ClassUser {
 
-    private $id, $email, $password, $name, $firstName;
+    private $id, $email, $password, $name, $firstName, $age, $sex;
 
     function id() {
         return $this->id;
@@ -48,5 +48,20 @@ class ClassUser {
     function setFirstName($firstName) {
         $this->firstName = $firstName;
     }
-
+    
+    function age() {
+        return $this->age;
+    }
+    
+    function setAge($age) {
+        $this->age = $age;
+    }
+    
+    function sex() {
+        return $this->sex;
+    }
+    
+    function setSex($sex) {
+        $this->sex = $sex;
+    }
 }

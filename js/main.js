@@ -43,16 +43,75 @@ function afficheFormulaire() {
             },
             function (data) {
                 console.log(data);
-                results = JSON.parse(data);
+                var results = JSON.parse(data);
                 if (results.verif === true) {
                     $("#buttonIns").hide();
+                    afficheSuiteForm();
                 } else {
-                    erreur = document.createElement('p');
+                    var erreur = document.createElement('p');
                     erreur.style = "color:red;";
                     erreur.textContent = "Email invalide !";
                     $('#inscription').append(erreur);
                 }
             });
+}
+
+function afficheSuiteForm() {
+    //br et hr
+    var separate = document.createElement('hr');
+    var lineBreack = document.createElement('br');
+    //création de mes éléments
+    var labelVerifEmail = document.createElement('label');
+    labelVerifEmail.textContent = "vérifiez votre email";
+    var verifEmail = document.createElement('input');
+    verifEmail.type = 'text';
+    verifEmail.name = 'verifEmailIns';
+    var labelVerifPassword = document.createElement('label');
+    labelVerifPassword.textContent = "vérifiez votre mot de passe";
+    var verifPassword = document.createElement('input');
+    verifPassword.type = 'text';
+    verifPassword.name = 'verifPAsswordIns';
+    var labelName = document.createElement('label');
+    labelName.textContent = "nom";
+    var name = document.createElement('input');
+    name.type = "text";
+    name.name = "nameIns";
+    var labelFirstNAme = document.createElement('label');
+    labelFirstNAme.textContent = "prénom";
+    var firstName = document.createElement('input');
+    firstName.type = "text";
+    firstName.name = "firstNameIns";
+    var labelAge = document.createElement('label');
+    labelAge.textContent = "age";
+    var age = document.createElement('input');
+    age.type = "number";
+    age.name = "ageIns";
+    var labelSex = document.createElement('label');
+    labelSex.textContent = "Sexe";
+    var sexF = document.createElement('input');
+    sexF.type = "radio";
+    sexF.name = "gender";
+    sexF.value = "female";
+    var labelSexF = document.createElement('label');
+    labelSexF.textContent = "femme";
+    var sexM = document.createElement('input');
+    sexM.type = "radio";
+    sexM.name = "gender";
+    sexM.value = "male";
+    var labelSexM = document.createElement('label');
+    labelSexM.textContent = "homme";
+    var sexO = document.createElement('input');
+    sexO.type = "radio";
+    sexO.name = "gender";
+    sexO.value = "other";
+    var labelSexO = document.createElement('label');
+    labelSexO.textContent = "autre";
+    var button = document.createElement('input');
+    button.type = "submit";
+    button.value = "S'inscrire";
+    button.form = "inscription";
+    //push de mes éléments dans le html
+    
 }
 
 $(".ajout-panier").click(function () {
