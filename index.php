@@ -18,9 +18,11 @@ switch ($loc) {
         break;
     case 'signin':
         include_once 'controler/controler-signin.php';
+        $loc = 'sign-in-up';
         break;
     case 'signup':
         include_once 'controler/controler-signup.php';
+        $loc = 'sign-in-up';
         break;
     case 'ingredients':
         include_once "controler/controler-ingredients.php";
