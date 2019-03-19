@@ -62,18 +62,14 @@ $(".ajout-panier").click(function () {
     monCookie = Cookies.get('panier');
     if (monCookie != undefined) {
         tableauId = JSON.parse(monCookie);
-        console.log("not undefined");
     }
     console.log("tab en json "+tableauId["recette" + id]);
     if (tableauId["recette" + id] === undefined) {
         tableauId["recette" + id] = 1;
-        console.log('nouveau recette');
     } else {
         tableauId["recette" + id] += 1;
     }
     str = JSON.stringify(tableauId);
-    console.log(tableauId);
-    console.log(str);
     Cookies.set('panier', str); // Création */
 })
 
