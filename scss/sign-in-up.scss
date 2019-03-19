@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 2em 0;
 }
 .connection input, .inscription input {
     margin-bottom: 1.5em;
@@ -18,5 +19,8 @@
 .divider {
     background-color: #620f0f;
     width: .15em;
-    height: 23em;
+    height: 40em;
+}
+.divRadio {
+    display: block!important;
 }

@@ -46,6 +46,10 @@ function afficheFormulaire() {
                 var results = JSON.parse(data);
                 if (results.verif === true) {
                     $("#buttonIns").hide();
+                    $("#labelEmailIns").hide();
+                    $("#emailIns").hide();
+                    $("#labelPasswordIns").hide();
+                    $("#passwordIns").hide();
                     afficheSuiteForm();
                 } else {
                     var erreur = document.createElement('p');
@@ -57,9 +61,14 @@ function afficheFormulaire() {
 }
 
 function afficheSuiteForm() {
-    //br et hr
+    //br et hr et div
     var separate = document.createElement('hr');
-    var lineBreack = document.createElement('br');
+    var lineBreack1 = document.createElement('br');
+    var lineBreack2 = document.createElement('br');
+    var lineBreack3 = document.createElement('br');
+    var lineBreack4 = document.createElement('br');
+    var div = document.createElement('div');
+    div.className = "divRadio";
     //création de mes éléments
     var labelVerifEmail = document.createElement('label');
     labelVerifEmail.textContent = "vérifiez votre email";
@@ -90,19 +99,19 @@ function afficheSuiteForm() {
     labelSex.textContent = "Sexe";
     var sexF = document.createElement('input');
     sexF.type = "radio";
-    sexF.name = "gender";
+    sexF.name = "sexIns";
     sexF.value = "female";
     var labelSexF = document.createElement('label');
     labelSexF.textContent = "femme";
     var sexM = document.createElement('input');
     sexM.type = "radio";
-    sexM.name = "gender";
+    sexM.name = "sexIns";
     sexM.value = "male";
     var labelSexM = document.createElement('label');
     labelSexM.textContent = "homme";
     var sexO = document.createElement('input');
     sexO.type = "radio";
-    sexO.name = "gender";
+    sexO.name = "sexIns";
     sexO.value = "other";
     var labelSexO = document.createElement('label');
     labelSexO.textContent = "autre";
@@ -111,7 +120,29 @@ function afficheSuiteForm() {
     button.value = "S'inscrire";
     button.form = "inscription";
     //push de mes éléments dans le html
-    
+    $('#inscription').append(labelVerifEmail);
+    $('#inscription').append(verifEmail);
+    $('#inscription').append(labelVerifPassword);
+    $('#inscription').append(verifPassword);
+    $('#inscription').append(separate);
+    $('#inscription').append(labelName);
+    $('#inscription').append(name);
+    $('#inscription').append(labelFirstNAme);
+    $('#inscription').append(firstName);
+    $('#inscription').append(labelAge);
+    $('#inscription').append(age);
+    $('#inscription').append(div);
+    $('.divRadio').append(labelSex);
+    $('.divRadio').append(lineBreack1);
+    $('.divRadio').append(sexF);
+    $('.divRadio').append(labelSexF);
+    $('.divRadio').append(lineBreack2);
+    $('.divRadio').append(sexM);
+    $('.divRadio').append(labelSexM);
+    $('.divRadio').append(lineBreack3);
+    $('.divRadio').append(sexO);
+    $('.divRadio').append(labelSexO);
+    $('#inscription').append(button);
 }
 
 $(".ajout-panier").click(function () {

@@ -10,10 +10,10 @@
     <div class="divider"></div>
     <div><h3>Inscription</h3></div>
     <form class="inscription" id="inscription" action="index.php?loc=signup" method="POST" autocomplete="off">
-        <label>email:</label>
-        <input type="email" name="emailIns">
-        <label>mot de passe:</label>
-        <input type="password" name="passwordIns">
+        <label id="labelEmailIns">email:</label>
+        <input type="email" id="emailIns" name="emailIns">
+        <label id="labelPasswordIns">mot de passe:</label>
+        <input type="password" id="passwordIns" name="passwordIns">
         <br><input type="button" id="buttonIns" onclick="afficheFormulaire();" value="S'inscrire">
     </form>
 </div>
