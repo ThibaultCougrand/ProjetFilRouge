@@ -11,8 +11,8 @@ if (!isset($categories)) {
             <?php
             if (count($categories) > 0) {
                 foreach ($categories as $value) {
-                    echo '<li class="taille-filtre un-filtre" data-id="' . $value->id(). $value->name() .'"></li>';
-                } 
+                    echo '<li class="taille-filtre un-filtre category-ing" data-id="' . $value->id() . '">' . $value->name() . '</li>';
+                }
             } else {
                 echo ("error");
             }
@@ -20,22 +20,22 @@ if (!isset($categories)) {
         </ul>
     </aside>
     <div class="ingredient">
+    <article id="les-articles">
         <?php
         foreach ($produits as $value) {
 
             ?>
-        <figure>
-            <img src="<?= $value->image(); ?>" alt="<?= $value->name(); ?>">
-            <figcaption><?= $value->name(); ?></figcaption>
-            <div class="wrap-button">
-                <p><?= $value->affichePrix(); ?></p>
-                <button><i class="fas fa-cart-plus"></i></button>
-            </div>
-
-        </figure>
-        <?php 
-    }
-    ?>
-
+        
+            <figure>
+                <a href=""><img src="<?= $value->image(); ?>" alt="<?= $value->name(); ?>"></a>
+                <figcaption><?= $value->name(); ?></figcaption>
+                <div class="wrap-button">
+                    <p><?= $value->affichePrix(); ?></p>
+                    <button><i class="fas fa-cart-plus"></i></button>
+            </figure>
+            <?php 
+        }
+        ?>
+        </article>
     </div>
 </article> 

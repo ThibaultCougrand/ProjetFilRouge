@@ -3,11 +3,6 @@
     display: flex;
 }
 
-.ingredient {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
 .container-ing>aside {
     width: 33vw;
     overflow: hidden;
@@ -17,12 +12,15 @@
     border-bottom: 56px solid white;
     border-right: 10px solid white;
 }
-
-.ingredient figure img {
+.ingredient article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.ingredient article figure a img {
     width: 99%;
 }
 
-.ingredient figure figcaption {
+.ingredient article figure figcaption {
     display: flex;
     justify-content: space-evenly;
 }
@@ -38,7 +36,7 @@
     text-align: center;
 }
 
-.ingredient figure img {
+.ingredient article figure a img {
     width: 22vw;
     height: 30vh;
     object-fit: contain;

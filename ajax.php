@@ -19,7 +19,6 @@ switch ($uc) {
         } else {
             $data['erreur'] =  "pas d'id";
         }
-        echo json_encode($data);
         break;
     case 'signup':
         $email = filter_input(INPUT_POST, 'email');
@@ -27,9 +26,22 @@ switch ($uc) {
         $verif = $modele->verifEmailExist($email);
         $data['verif'] = (boolean)$verif;
         break;
+
+        case 'produit':
+        $id = filter_input(INPUT_POST, 'id');
+        if ($id) {
+            $modele = new ModeleArticle();
+            $array = $modele->articlesByCategory($id);
+            foreach ($array as $pro) {
+                array_push($data, $pro->toArray());
+            }
+        }else {
+            $data['erreur'] = "pas d'id romain ajax.php";    
+        }
+        break;
     default:
         $data['erreur'] =  'cas inconnue';
         break;
 }
 
-
+echo json_encode($data);
