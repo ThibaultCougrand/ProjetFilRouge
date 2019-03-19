@@ -54,20 +54,19 @@ function afficheFormulaire() {
                 }
             });
 }
-
 $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    var tableauId = {};
+    var tableauId = {"recette":{}};
     monCookie = Cookies.get('panier');
     if (monCookie != undefined) {
         tableauId = JSON.parse(monCookie);
     }
-    console.log("tab en json "+tableauId["recette" + id]);
-    if (tableauId["recette" + id] === undefined) {
-        tableauId["recette" + id] = 1;
+    console.log("tab en json "+tableauId["recette"][id]);
+    if (tableauId["recette"][id] === undefined) {
+        tableauId["recette"][id] = 1;
     } else {
-        tableauId["recette" + id] += 1;
+        tableauId["recette"][id] += 1;
     }
     str = JSON.stringify(tableauId);
     Cookies.set('panier', str); // Création */
