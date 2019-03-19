@@ -108,5 +108,29 @@ $('un-filtre').click(function () {
         });
         $(".image-recette").click(function () {
 
+<<<<<<< HEAD
+$(".ajout-panier").click(function () {
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+    var tableauId = new Array();
+    monCookie = Cookies.get('panier');
+    if (monCookie != undefined) {
+        tableauId = JSON.parse(monCookie);
+        console.log("not undefined"+ tableauId);
+    }
+    console.log(tableauId["recette" + id]);
+    if (tableauId["recette" + id] == undefined) {
+        tableauId["recette" + id] = 1;
+        console.log('nouveau recette');
+    } else {
+        tableauId["recette" + id] += 1;
+    }
+    str = JSON.stringify(tableauId);
+    console.log("str: "+str)
+    Cookies.set('panier', tableauId); // Création */
+    console.log(Cookies.set('panier', tableauId));
+})
+=======
         });
 });
+>>>>>>> b1252c15bdc24e0c97e4ac39e997684093921e9a
