@@ -15,6 +15,7 @@ class ModeleOneRecipe extends ClassConnexion{
             $ingredient->setName($donnees["name"]);
             $ingredient->setQtx($donnees["qtx"]);
             $ingredient->setUnite($donnees["unite"]);
+            $ingredient->setImage($donnees["image"]);
             array_push($array,$ingredient);
         }
         return $array;
