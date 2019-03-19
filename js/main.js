@@ -35,17 +35,19 @@ $(".ajout-panier").click(function () {
     let id = params.get("id");
     var tableauId = new Array();
     monCookie = Cookies.get('panier');
-    if (monCookie !== undefined) {
+    if (monCookie != undefined) {
         tableauId = JSON.parse(monCookie);
+        console.log("not undefined"+ tableauId);
     }
-    console.log(tableauId["nom" + id]);
-    if (tableauId["nom" + id] == undefined) {
-        tableauId["nom" + id] = 1;
+    console.log(tableauId["recette" + id]);
+    if (tableauId["recette" + id] == undefined) {
+        tableauId["recette" + id] = 1;
         console.log('nouveau recette');
     } else {
-        tableauId["nom" + id] += 1;
+        tableauId["recette" + id] += 1;
     }
     str = JSON.stringify(tableauId);
-    console.log(tableauId);
-    Cookies.set('panier', str); // Création */
+    console.log("str: "+str)
+    Cookies.set('panier', tableauId); // Création */
+    console.log(Cookies.set('panier', tableauId));
 })
