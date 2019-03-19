@@ -11,8 +11,9 @@ class ClassArticle
     private $unit;
     private $qtx;
 
+    
     public function affichePrix(){
-        return $this->prix .'€ pour '. $this->qtx_price() .' '. $this->unit();
+        return $this->prix .'€ pour '. $this->qtx() .' '. $this->unit();
     }
 
     public function id()

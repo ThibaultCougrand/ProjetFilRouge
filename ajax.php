@@ -29,6 +29,7 @@ switch ($uc) {
 
         case 'produit':
         $id = filter_input(INPUT_POST, 'id');
+        //permet de recuperer la valeur de id envoyé grâce à la requête ajax
         if ($id) {
             $modele = new ModeleArticle();
             $array = $modele->articlesByCategory($id);
@@ -43,5 +44,5 @@ switch ($uc) {
         $data['erreur'] =  'cas inconnue';
         break;
 }
-
+//j'encode mon tableau en json php => JS
 echo json_encode($data);

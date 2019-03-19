@@ -33,16 +33,18 @@ $(".category-recipe").click(function () {
 
 
 /********************ICI REQUÊTE ROMAIN *******************************/
+//ajax envoie sur php et php retourne
 $('.category-ing').click(function () {
     reset = $('#les-articles');
     reset.html(""); //me permet de reset la class qui contient les images, names etc
     $.post(
         'ajax.php', { //permet de pointe vers la page ajax.php
-            id: $(this).data("id"),
-            uc: 'produit'
+            id: $(this).data("id"), //envoie la valeur de $id dans ajax.php
+            uc: 'produit' //permet de switch dans le ajax.php 
         },
         function (data) {
-            results = (JSON.parse(data));
+            //retour de data dans ajax.php
+            results = (JSON.parse(data)); //JE PARSE MON TABLEAU EN JSON
             if (Array.isArray(results)) {
                 results.forEach(element => {
                     console.log(data);
