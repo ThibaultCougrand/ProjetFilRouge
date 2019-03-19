@@ -1,11 +1,12 @@
 <?php
-$login = filter_input(INPUT_POST, 'emailCo');
+$modele = new ModeleSignIn();
+$email = filter_input(INPUT_POST, 'emailCo');
 $password = filter_input(INPUT_POST, 'passwordCo');
 
 $user = new ClassUser();
-$user->setEmail($login);
+$user->setEmail($email);
 $user->setPassword($password);
-ModeleSignUp::verifLogin($user);
+$modele->verifLogin($user);
 if ($user->id() > 0) {
     //stoquer id dans la session
 } else {
