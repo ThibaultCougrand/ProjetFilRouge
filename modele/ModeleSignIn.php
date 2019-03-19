@@ -1,23 +1,24 @@
 <?php
 /**
- * Description of ModeleSignInUp
+ * Description of ModeleSignUp
  *
  * @author thibault
  */
-class ModeleSignInUp extends ClassConnexion {
+class ModeleSignIn extends ClassConnexion {
 
-    public function inscription($user) {
+    public function verifLogin($user) {
         try {
-            $req = parent::$bdd->prepare('INSERT INTO `utilisateur`( `email`, `password`) VALUES (:login,:password)');
+            $req = parent::$bdd->prepare('SELECT `id` FROM `utilisateur` WHERE `email`=:email AND `password`=:password');
             $result = $req->execute(array(
-                'email' => $user->email,
-                'password' => $user->password
+                'email' => $user->email(),
+                'password' => $user->password()
             ));
-            if ($result == true) {
-                $message = "Succes";
+            while ($donnee = $result->fetch()) {
+                $user->setId($donnee['id']);
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
+
 }

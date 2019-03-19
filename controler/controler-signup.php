@@ -1,13 +1,15 @@
 <?php
-$login = filter_input(INPUT_POST, 'emailCo');
-$password = filter_input(INPUT_POST, 'passwordCo');
+$modele = new ModeleSignUp();
+$name = filter_input(INPUT_POST, 'nameIns');
+$firstName = filter_input(INPUT_POST, 'firstNameIns');
+$email = filter_input(INPUT_POST, 'emailIns');
+$password = filter_input(INPUT_POST, 'passwordIns');
 
 $user = new ClassUser();
-$user->setEmail($login);
+$user->setName($name);
+$user->setFirstName($firstName);
+$user->setEmail($email);
 $user->setPassword($password);
-ModeleSignUp::verifLogin($user);
-if ($user->id() > 0) {
-    //stoquer id dans la session
-} else {
-    echo "erreur";
-}
+//if ($modele->verifEmailExist($user)) {
+$modele->inscription($user);
+//}

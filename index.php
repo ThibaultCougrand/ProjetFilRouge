@@ -18,9 +18,11 @@ switch ($loc) {
         break;
     case 'signin':
         include_once 'controler/controler-signin.php';
+        $loc = 'sign-in-up';
         break;
     case 'signup':
         include_once 'controler/controler-signup.php';
+        $loc = 'sign-in-up';
         break;
     case 'ingredients':
         include_once "controler/controler-ingredients.php";
@@ -30,6 +32,9 @@ switch ($loc) {
         break;
     case 'one-recipe':
         include_once "controler/controler-one-recipe.php";
+        break;
+    case 'produits':
+        include_once "controler/controler-articles.php";
         break;
     default:
         break;

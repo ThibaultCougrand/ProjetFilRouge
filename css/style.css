@@ -5,8 +5,7 @@
   -webkit-box-sizing: border-box; }
 
 body {
-  font-family: 'PT Sans', sans-serif;
-  letter-spacing: 0.5px; }
+  font-family: 'PT Sans', sans-serif; }
 
 header {
   height: 30vh;
@@ -123,25 +122,12 @@ article aside img {
   display: flex; }
 
 .ul-ingredient-list {
-  width: 33vw;
-  justify-content: unset !important; }
-
-.ingredient-list {
-  flex-direction: column;
-  justify-content: unset !important; }
-
-.un-ingredient img {
-  width: 4vw;
-  height: 4vw;
-  object-fit: contain; }
+  width: 33vw; }
 
 .uneRecette figure {
   display: flex;
   flex-direction: column;
   justify-content: center; }
-
-.uneRecette {
-  width: 100%; }
 
 .uneRecette figure img {
   object-fit: contain; }
@@ -156,9 +142,7 @@ article aside img {
 
 .un-ingredient {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%; }
+  justify-content: center; }
 
 .un-ingredient span {
   width: 35%; }
@@ -219,11 +203,10 @@ article aside img {
 .connection, .inscription {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 2em 0; }
+  justify-content: center; }
 
 .connection input, .inscription input {
-  margin-bottom: 1em; }
+  margin-bottom: 1.5em; }
 
 .divider {
   background-color: #620f0f;

@@ -21,7 +21,12 @@ switch ($uc) {
         }
         echo json_encode($data);
         break;
-
+    case 'signup':
+        $email = filter_input(INPUT_POST, 'email');
+        $modele = new ModeleSignUp();
+        $verif = $modele->verifEmailExist($email);
+        $data['verif'] = (boolean)$verif;
+        break;
     default:
         $data['erreur'] =  'cas inconnue';
         break;
