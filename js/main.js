@@ -1,3 +1,7 @@
+/**********************************/
+/*REQUETTE AJAX POUR PAGE RECETTES*/
+/**********************************/
+
 $(".category-recipe").click(function () {
     reset = $("#les-recettes");
     reset.html("");
@@ -31,8 +35,31 @@ $(".category-recipe").click(function () {
     );
 });
 
+/*********************************************/
+/*PASSER LES INGREDIENTS DE RECETTE AU PANIER*/
+/*********************************************/
 
-    /*** SIGN IN AND UP PAGE ***/
+$(".ajout-panier").click(function () {
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+    var tableauId = {"recette":{}};
+    monCookie = Cookies.get('panier');
+    if (monCookie !== undefined) {
+        tableauId = JSON.parse(monCookie);
+    }
+    console.log("tab en json "+tableauId["recette"][id]);
+    if (tableauId["recette"][id] === undefined) {
+        tableauId["recette"][id] = 1;
+    } else {
+        tableauId["recette"][id] += 1;
+    }
+    str = JSON.stringify(tableauId);
+    Cookies.set('panier', str); // Création */
+});
+
+/*************************************/
+/*REQUETTE AJAX POUR PAGE INSCRIPTION*/
+/*************************************/
 
 function afficheFormulaire() {
     console.log(document.querySelector("#emailIns").value);
@@ -60,15 +87,17 @@ function afficheFormulaire() {
             });
 }
 
+/*Fonction qui génère le formulaire d'inscription dans la page html*/
 function afficheSuiteForm() {
-    //br et hr et div
+    
+    //br,hr et div
     var separate = document.createElement('hr');
     var lineBreack1 = document.createElement('br');
     var lineBreack2 = document.createElement('br');
     var lineBreack3 = document.createElement('br');
-    var lineBreack4 = document.createElement('br');
     var div = document.createElement('div');
     div.className = "divRadio";
+    
     //création de mes éléments
     var labelVerifEmail = document.createElement('label');
     labelVerifEmail.textContent = "vérifiez votre email";
@@ -119,6 +148,7 @@ function afficheSuiteForm() {
     button.type = "submit";
     button.value = "S'inscrire";
     button.form = "inscription";
+    
     //push de mes éléments dans le html
     $('#inscription').append(labelVerifEmail);
     $('#inscription').append(verifEmail);
@@ -145,25 +175,10 @@ function afficheSuiteForm() {
     $('#inscription').append(button);
 }
 
-$(".ajout-panier").click(function () {
-    let params = new URLSearchParams(document.location.search);
-    let id = params.get("id");
-    var tableauId = {"recette":{}};
-    monCookie = Cookies.get('panier');
-    if (monCookie !== undefined) {
-        tableauId = JSON.parse(monCookie);
-    }
-    console.log("tab en json "+tableauId["recette"][id]);
-    if (tableauId["recette"][id] === undefined) {
-        tableauId["recette"][id] = 1;
-    } else {
-        tableauId["recette"][id] += 1;
-    }
-    str = JSON.stringify(tableauId);
-    Cookies.set('panier', str); // Création */
-});
+/*************************************/
+/*REQUETTE AJAX POUR PAGE INGREDIENTS*/
+/*************************************/
 
-/********************ICI REQUÊTE ROMAIN *******************************/
 //ajax envoie sur php et php retourne
 $('.category-ing').click(function () {
     reset = $('#les-articles');

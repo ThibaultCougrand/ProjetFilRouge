@@ -1,17 +1,25 @@
 <?php
+/*******************/
+/*CONTROLER GENERAL*/
+/*******************/
 
+/*INITIALISATION DE LA VARIABLE LOC*/
 $loc = filter_input(INPUT_GET, 'loc');
 if (!$loc) {
     $loc = 'home';
 }
 
+/*INITIALISATION DE LA VARIABLE IMAGE QUI VA DEFINIR L'IMAGE DU HEADER*/
 $image = "asset/" . $loc . ".jpg";
 if (!file_exists($image)) {
     $image = "asset/home.jpg";
 }
+
+/*AUTOLOADER*/
 include_once 'controler/Autoloader.php';
 Autoloader::register();
 
+/*FAIT APPEL AUX BONS CONTROLER EN FONCTION DE LA PAGE SUR LAQUELLE ON SE TROUVE*/
 switch ($loc) {
     case 'recipes':
         include_once "controler/controler-recipes.php";
@@ -45,4 +53,6 @@ switch ($loc) {
     default:
         break;
 }
+
+/*AJOUT DE LA PAGE HTML*/
 include "vue/template.php";
