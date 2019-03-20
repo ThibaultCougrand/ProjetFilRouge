@@ -57,6 +57,14 @@ $(".ajout-panier").click(function () {
     Cookies.set('panier', str); // Création */
 });
 
+/*********************************************/
+/*PASSER LES INGREDIENTS DE PRODUITS AU PANIER*/
+/*********************************************/
+$(".fas").click(function() {
+    let id = $(this).data("id");
+    console.log(id);
+});
+
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
 /*************************************/

@@ -35,7 +35,7 @@ if (!isset($categories)) {
                 <figcaption><?= $value->name(); ?></figcaption>
                 <div class="wrap-button">
                     <p><?= $value->affichePrix(); ?></p>
-                    <button><i class="fas fa-cart-plus"></i></button>
+                    <button><i class="fas fa-cart-plus" data-id="<?= $value->id() ?>" ></i></button>
             </figure>
             <?php 
         }
