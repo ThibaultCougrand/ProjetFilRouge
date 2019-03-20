@@ -42,17 +42,21 @@ $(".category-recipe").click(function () {
 $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    var tableauId = {"recette":{}};
+    var tableauId = {};
     monCookie = Cookies.get('panier');
     if (monCookie !== undefined) {
         tableauId = JSON.parse(monCookie);
     }
-    console.log("tab en json "+tableauId["recette"][id]);
+    if (tableauId['recette'] === undefined) {
+        tableauId["recette"] = {};
+    }
+
     if (tableauId["recette"][id] === undefined) {
         tableauId["recette"][id] = 1;
     } else {
         tableauId["recette"][id] += 1;
     }
+    console.log(tableauId);
     str = JSON.stringify(tableauId);
     Cookies.set('panier', str); // Création */
 });
@@ -60,11 +64,31 @@ $(".ajout-panier").click(function () {
 /*********************************************/
 /*PASSER LES INGREDIENTS DE PRODUITS AU PANIER*/
 /*********************************************/
-$(".fas").click(function() {
+$(".add-ing").on("click", function () {
     let id = $(this).data("id");
-    console.log(id);
+    addPanier(id);
 });
 
+function addPanier(id) {
+    var tab = {};
+
+    roroCookie = Cookies.get('panier');
+    if (roroCookie !== undefined) {
+        tab = JSON.parse(roroCookie);
+    }
+    if (tab['produits'] === undefined) {
+        tab['produits'] = {};
+    }
+    if (tab['produits'][id] !== undefined) {
+        tab['produits'][id] += 1;
+    } else {
+        tab['produits'][id] = 1;
+    }
+    console.log(tab);
+    str = JSON.stringify(tab);
+    Cookies.set('panier', str);
+
+}
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
 /*************************************/
@@ -72,32 +96,32 @@ $(".fas").click(function() {
 function afficheFormulaire() {
     console.log(document.querySelector("#emailIns").value);
     $.post(
-            'ajax.php', {
-                email: document.querySelector("#emailIns").value,
-                uc: 'signup'
-            },
-            function (data) {
-                console.log(data);
-                var results = JSON.parse(data);
-                if (results.verif === true) {
-                    $("#buttonIns").hide();
-                    $("#labelEmailIns").hide();
-                    $("#emailIns").hide();
-                    $("#labelPasswordIns").hide();
-                    $("#passwordIns").hide();
-                    afficheSuiteForm();
-                } else {
-                    var erreur = document.createElement('p');
-                    erreur.style = "color:red;";
-                    erreur.textContent = "Email invalide !";
-                    $('#inscription').append(erreur);
-                }
-            });
+        'ajax.php', {
+            email: document.querySelector("#emailIns").value,
+            uc: 'signup'
+        },
+        function (data) {
+            console.log(data);
+            var results = JSON.parse(data);
+            if (results.verif === true) {
+                $("#buttonIns").hide();
+                $("#labelEmailIns").hide();
+                $("#emailIns").hide();
+                $("#labelPasswordIns").hide();
+                $("#passwordIns").hide();
+                afficheSuiteForm();
+            } else {
+                var erreur = document.createElement('p');
+                erreur.style = "color:red;";
+                erreur.textContent = "Email invalide !";
+                $('#inscription').append(erreur);
+            }
+        });
 }
 
 /*Fonction qui génère le formulaire d'inscription dans la page html*/
 function afficheSuiteForm() {
-    
+
     //br,hr et div
     var separate = document.createElement('hr');
     var lineBreack1 = document.createElement('br');
@@ -105,7 +129,7 @@ function afficheSuiteForm() {
     var lineBreack3 = document.createElement('br');
     var div = document.createElement('div');
     div.className = "divRadio";
-    
+
     //création de mes éléments
     var labelVerifEmail = document.createElement('label');
     labelVerifEmail.textContent = "vérifiez votre email";
@@ -156,7 +180,7 @@ function afficheSuiteForm() {
     button.type = "submit";
     button.value = "S'inscrire";
     button.form = "inscription";
-    
+
     //push de mes éléments dans le html
     $('#inscription').append(labelVerifEmail);
     $('#inscription').append(verifEmail);
@@ -210,15 +234,20 @@ $('.category-ing').click(function () {
                     div = document.createElement('div');
                     div.className = "wrap-button";
                     para = document.createElement('p');
-                    para.textContent = element.prix + '€' + ' pour '+ element.qtx + ' ' + element.unit;
+                    para.textContent = element.prix + '€' + ' pour ' + element.qtx + ' ' + element.unit;
                     button = document.createElement('button');
+                    //button.className = "add-ing";
+                    //button.setAttribute("data-id", element.id);
+                    button.onclick = function () {
+                        addPanier(element.id);
+                    }
                     i = document.createElement('i');
                     i.className = "fas fa-cart-plus";
-                    img.src=element.img;
+                    img.src = element.img;
                     figcaption.textContent = element.name;
 
                     button.append(i);
-                    div.append(para); 
+                    div.append(para);
                     div.append(button);
                     lien.append(img);
                     figure.append(lien);
@@ -231,7 +260,7 @@ $('.category-ing').click(function () {
                 console.log('requête ajax romain null');
             }
         });
-        $(".image-recette").click(function () {
+    $(".image-recette").click(function () {
 
-        });
+    });
 });
