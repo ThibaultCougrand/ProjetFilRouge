@@ -63,6 +63,24 @@ article aside img {
   font-size: large; }
 
 /************ ICI FIN HOME CSS ************/
+/************* PANIER-CSS ************/
+.titre-panier {
+  text-align: center;
+  font-size: 3rem; }
+
+.titre-recette {
+  text-align: center;
+  font-size: 2rem; }
+
+/* .ul-panier{
+    display: flex;
+    flex-direction: column;
+    justify-content:center; 
+} */
+.ingredient-modif {
+  padding: 0 !important; }
+
+/********** END-PANIER-CSS ************/
 /************ ICI DEBUT INGREDIENTS *************/
 .container-ing {
   display: flex; }
