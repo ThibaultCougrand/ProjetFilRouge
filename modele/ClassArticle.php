@@ -11,8 +11,9 @@ class ClassArticle
     private $unit;
     private $qtx;
 
+    
     public function affichePrix(){
-        return $this->prix .'€ pour '. $this->qtx_price() .' '. $this->unit();
+        return $this->prix .'€ pour '. $this->qtx() .' '. $this->unit();
     }
 
     public function id()
@@ -90,10 +91,11 @@ class ClassArticle
 
         return $this;
     }
-
+    //tableau associatif clé => valeur
     public function toArray()
-    {
-        return ["id" => $this->id(), "name" => $this->name(), "img" =>  $this->image()];
+    {   
+        return ["id" => $this->id(), "name" => $this->name(), "img" =>  $this->image(), "prix" => $this->prix(), "unit" =>
+    $this->unit(), "qtx" => $this->qtx() ];
     }
 
     /**

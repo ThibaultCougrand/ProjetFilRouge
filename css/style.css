@@ -63,13 +63,27 @@ article aside img {
   font-size: large; }
 
 /************ ICI FIN HOME CSS ************/
+/************* PANIER-CSS ************/
+.titre-panier {
+  text-align: center;
+  font-size: 3rem; }
+
+.titre-recette {
+  text-align: center;
+  font-size: 2rem; }
+
+/* .ul-panier{
+    display: flex;
+    flex-direction: column;
+    justify-content:center; 
+} */
+.ingredient-modif {
+  padding: 0 !important; }
+
+/********** END-PANIER-CSS ************/
 /************ ICI DEBUT INGREDIENTS *************/
 .container-ing {
   display: flex; }
-
-.ingredient {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; }
 
 .container-ing > aside {
   width: 33vw;
@@ -80,10 +94,14 @@ article aside img {
   border-bottom: 56px solid white;
   border-right: 10px solid white; }
 
-.ingredient figure img {
+.ingredient article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+
+.ingredient article figure a img {
   width: 99%; }
 
-.ingredient figure figcaption {
+.ingredient article figure figcaption {
   display: flex;
   justify-content: space-evenly; }
 
@@ -96,7 +114,7 @@ article aside img {
   width: 2vw;
   text-align: center; }
 
-.ingredient figure img {
+.ingredient article figure a img {
   width: 22vw;
   height: 30vh;
   object-fit: contain; }

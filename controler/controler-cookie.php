@@ -9,4 +9,3 @@ if($id){
 }else{
     $produits = $modeleArticle->articlesAll();
 }
-

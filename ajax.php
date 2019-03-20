@@ -26,11 +26,24 @@ switch ($uc) {
         $verif = $modele->verifEmailExist($email);
         $data['verif'] = (boolean) $verif;
         break;
+
+        case 'produit':
+        $id = filter_input(INPUT_POST, 'id');
+        //permet de recuperer la valeur de id envoyé grâce à la requête ajax
+        if ($id) {
+            $modele = new ModeleArticle();
+            $array = $modele->articlesByCategory($id);
+            foreach ($array as $pro) {
+                array_push($data, $pro->toArray());
+            }
+        }else {
+            $data['erreur'] = "pas d'id romain ajax.php";    
+        }
+        break;
     default:
         $data['erreur'] = 'cas inconnue';
         break;
 }
 
+//j'encode mon tableau en json php => JS
 echo json_encode($data);
-
-

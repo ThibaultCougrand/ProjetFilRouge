@@ -1,5 +1,6 @@
 <?php 
-class ClassRecette{
+class ClassRecette
+{
     private $id;
     private $name;
     private $description;
@@ -44,16 +45,15 @@ class ClassRecette{
     public function time()
     {
         return $this->time;
-    } 
+    }
     public function setTime($time)
     {
         $this->time = $time;
 
         return $this;
     }
-    public function toArray(){
+    public function toArray()
+    {
         return ["id" => $this->id(), "name" => $this->name(), "img" =>  $this->image()];
     }
-    
-    
 }

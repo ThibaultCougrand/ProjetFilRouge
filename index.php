@@ -36,6 +36,12 @@ switch ($loc) {
     case 'produits':
         include_once "controler/controler-articles.php";
         break;
+    case 'cookie':
+        include_once "controler/controler-cookie.php";
+        break;
+    case 'cart':
+        include_once "controler/controler-cart.php";
+        break;
     default:
         break;
 }
