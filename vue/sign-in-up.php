@@ -12,8 +12,10 @@
     <form class="inscription" id="inscription" action="index.php?loc=signup" method="POST" autocomplete="off">
         <label id="labelEmailIns">email:</label>
         <input type="email" id="emailIns" name="emailIns">
+        <p id="err-email" class="mesErr"></p>
         <label id="labelPasswordIns">mot de passe:</label>
         <input type="password" id="passwordIns" name="passwordIns">
+        <p id="err-password" class="mesErr"></p>
         <br><input type="button" id="buttonIns" onclick="afficheFormulaire();" value="S'inscrire">
     </form>
 </div>

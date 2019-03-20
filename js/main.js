@@ -71,7 +71,7 @@ function afficheFormulaire() {
             function (data) {
                 console.log(data);
                 var results = JSON.parse(data);
-                if (results.verif === true) {
+                if (results.verif === true && document.querySelector('#emailIns').value !== "") {
                     $("#buttonIns").hide();
                     $("#labelEmailIns").hide();
                     $("#emailIns").hide();
@@ -79,10 +79,7 @@ function afficheFormulaire() {
                     $("#passwordIns").hide();
                     afficheSuiteForm();
                 } else {
-                    var erreur = document.createElement('p');
-                    erreur.style = "color:red;";
-                    erreur.textContent = "Email invalide !";
-                    $('#inscription').append(erreur);
+                    document.querySelector('#err-email').textContent = "Email invalide !";
                 }
             });
 }
@@ -90,35 +87,53 @@ function afficheFormulaire() {
 /*Fonction qui génère le formulaire d'inscription dans la page html*/
 function afficheSuiteForm() {
     
-    //br,hr et div
+    /*br,hr et div radio*/
     var separate = document.createElement('hr');
+    separate.className = "dividerIns";
     var lineBreack1 = document.createElement('br');
     var lineBreack2 = document.createElement('br');
     var lineBreack3 = document.createElement('br');
-    var div = document.createElement('div');
-    div.className = "divRadio";
+    var divRadio = document.createElement('div');
+    divRadio.className = "divRadio";
     
-    //création de mes éléments
+    /*création de mes éléments*/
+    // verif email.
     var labelVerifEmail = document.createElement('label');
     labelVerifEmail.textContent = "vérifiez votre email";
     var verifEmail = document.createElement('input');
     verifEmail.type = 'text';
     verifEmail.name = 'verifEmailIns';
+    var errVerifEmail = document.createElement('p');
+    errVerifEmail.id = "err-verif-email";
+    errVerifEmail.className = "mesErr";
+    // verif password
     var labelVerifPassword = document.createElement('label');
     labelVerifPassword.textContent = "vérifiez votre mot de passe";
     var verifPassword = document.createElement('input');
     verifPassword.type = 'text';
     verifPassword.name = 'verifPAsswordIns';
+    var errVerifPassword = document.createElement('p');
+    errVerifPassword.id = "err-verif-password";
+    errVerifPassword.className = "mesErr";
+    // nom
     var labelName = document.createElement('label');
     labelName.textContent = "nom";
     var name = document.createElement('input');
     name.type = "text";
     name.name = "nameIns";
+    var errName = document.createElement('p');
+    errName.id = "err-name";
+    errName.className = "mesErr";
+    // prenom
     var labelFirstNAme = document.createElement('label');
     labelFirstNAme.textContent = "prénom";
     var firstName = document.createElement('input');
     firstName.type = "text";
     firstName.name = "firstNameIns";
+    var errFirstName = document.createElement('p');
+    errFirstName.id = "err-firstname";
+    errFirstName.className = "mesErr";
+    // age
     var labelAge = document.createElement('label');
     labelAge.textContent = "age";
     var age = document.createElement('input');
@@ -126,6 +141,10 @@ function afficheSuiteForm() {
     age.min = "1";
     age.max = "99";
     age.name = "ageIns";
+    var errAge = document.createElement('p');
+    errAge.id = "err-age";
+    errAge.className = "mesErr";
+    // sex
     var labelSex = document.createElement('label');
     labelSex.textContent = "Sexe";
     var sexF = document.createElement('input');
@@ -146,24 +165,33 @@ function afficheSuiteForm() {
     sexO.value = "other";
     var labelSexO = document.createElement('label');
     labelSexO.textContent = " autre";
+    var errSex = document.createElement('p');
+    errSex.id = "err-sex";
+    errSex.className = "mesErr";
+    // bouton
     var button = document.createElement('input');
     button.type = "submit";
     button.value = "S'inscrire";
     button.form = "inscription";
     
-    //push de mes éléments dans le html
+    /*push de mes éléments dans le html.*/
     $('#inscription').append(labelVerifEmail);
     $('#inscription').append(verifEmail);
+    $('#inscription').append(errVerifEmail);
     $('#inscription').append(labelVerifPassword);
     $('#inscription').append(verifPassword);
+    $('#inscription').append(errVerifPassword);
     $('#inscription').append(separate);
     $('#inscription').append(labelName);
     $('#inscription').append(name);
+    $('#inscription').append(errName);
     $('#inscription').append(labelFirstNAme);
     $('#inscription').append(firstName);
+    $('#inscription').append(errFirstName);
     $('#inscription').append(labelAge);
     $('#inscription').append(age);
-    $('#inscription').append(div);
+    $('#inscription').append(errAge);
+    $('#inscription').append(divRadio);
     $('.divRadio').append(labelSex);
     $('.divRadio').append(lineBreack1);
     $('.divRadio').append(sexF);
@@ -174,6 +202,7 @@ function afficheSuiteForm() {
     $('.divRadio').append(lineBreack3);
     $('.divRadio').append(sexO);
     $('.divRadio').append(labelSexO);
+    $('#inscription').append(errSex);
     $('#inscription').append(button);
 }
 

@@ -8,6 +8,7 @@ $age = filter_input(INPUT_POST, 'ageIns');
 $sex = filter_input(INPUT_POST, 'sexIns');
 
 $user = new ClassUser();
+
 $user->setName($name);
 $user->setFirstName($firstName);
 $user->setEmail($email);

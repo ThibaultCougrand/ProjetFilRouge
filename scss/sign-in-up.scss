@@ -13,9 +13,9 @@
     justify-content: center;
     margin: 2em 0;
 }
-.connection input, .inscription input {
+/*.connection input, .inscription input {
     margin-bottom: 1.5em;
-}
+}*/
 .divider {
     background-color: #620f0f;
     width: .15em;
@@ -23,4 +23,10 @@
 }
 .divRadio {
     display: block!important;
+}
+
+.mesErr {
+    height: 25px;
+    font-size: 18px;
+    color: red;
 }
