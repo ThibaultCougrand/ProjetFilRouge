@@ -5,12 +5,12 @@
         <group>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/ajax.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/modele/ModeleSignUp.php</file>
+            <file>file:/opt/lampp/htdocs/ProjetFilRouge/vue/template.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/modele/ClassUser.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/vue/sign-in-up.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/controler/controler-signup.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/index.php</file>
             <file>file:/opt/lampp/htdocs/ProjetFilRouge/js/main.js</file>
-            <file>file:/opt/lampp/htdocs/ProjetFilRouge/scss/sign-in-up.scss</file>
         </group>
     </open-files>
 </project-private>

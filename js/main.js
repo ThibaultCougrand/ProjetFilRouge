@@ -28,9 +28,49 @@ $(".category-recipe").click(function () {
                 console.log('pas tableau');
             }
         }
-    )
-})
+    );
+});
 
+
+    /*** SIGN IN AND UP PAGE ***/
+
+function afficheFormulaire() {
+    console.log(document.querySelector("#emailIns").value);
+    $.post(
+            'ajax.php', {
+                email: document.querySelector("#emailIns").value,
+                uc: 'signup'
+            },
+            function (data) {
+                console.log(data);  
+                results = JSON.parse(data);
+                if (results.verif === true) {
+                    $("#buttonIns").hide();
+                } else {
+                    erreur = document.createElement('p');
+                    erreur.style = "color:red;";
+                    erreur.textContent = "Email invalide !";
+                    $('#inscription').append(erreur);
+                }
+            });
+}
+$(".ajout-panier").click(function () {
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
+    var tableauId = {"recette":{}};
+    monCookie = Cookies.get('panier');
+    if (monCookie !== undefined) {
+        tableauId = JSON.parse(monCookie);
+    }
+    console.log("tab en json "+tableauId["recette"][id]);
+    if (tableauId["recette"][id] === undefined) {
+        tableauId["recette"][id] = 1;
+    } else {
+        tableauId["recette"][id] += 1;
+    }
+    str = JSON.stringify(tableauId);
+    Cookies.set('panier', str); // Création */
+});
 
 /********************ICI REQUÊTE ROMAIN *******************************/
 //ajax envoie sur php et php retourne
@@ -76,6 +116,8 @@ $('.category-ing').click(function () {
             } else {
                 console.log('requête ajax romain null');
             }
-        })
-        
-})
+        });
+        $(".image-recette").click(function () {
+
+        });
+});
