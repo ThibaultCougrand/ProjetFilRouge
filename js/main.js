@@ -29,7 +29,7 @@ $(".category-recipe").click(function () {
                         $("#les-recettes").append(figure);
                     });
                 } else {
-                    console.log('pas tableau');
+                    console.log('erreur ajax');
                 }
             }
     );
@@ -38,24 +38,76 @@ $(".category-recipe").click(function () {
 /*********************************************/
 /*PASSER LES INGREDIENTS DE RECETTE AU PANIER*/
 /*********************************************/
-
 $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    var tableauId = {"recette": {}};
+    var tableauId = {};
     monCookie = Cookies.get('panier');
     if (monCookie !== undefined) {
         tableauId = JSON.parse(monCookie);
     }
-    console.log("tab en json " + tableauId["recette"][id]);
+    if (tableauId['recette'] === undefined) {
+        tableauId["recette"] = {};
+    }
     if (tableauId["recette"][id] === undefined) {
         tableauId["recette"][id] = 1;
     } else {
         tableauId["recette"][id] += 1;
     }
+    console.log(tableauId);
     str = JSON.stringify(tableauId);
     Cookies.set('panier', str); // Création */
 });
+
+/*********************************************/
+/*PASSER LES INGREDIENTS DE PRODUITS AU PANIER*/
+/*********************************************/
+$(".add-ing").on("click", function () {
+    let id = $(this).data("id");
+    addPanier(id);
+});
+
+function addPanier(id) {
+    var tab = {};
+
+    roroCookie = Cookies.get('panier');
+    if (roroCookie !== undefined) {
+        tab = JSON.parse(roroCookie);
+    }
+    if (tab['produits'] === undefined) {
+        tab['produits'] = {};
+    }
+    if (tab['produits'][id] !== undefined) {
+        tab['produits'][id] += 1;
+    } else {
+        tab['produits'][id] = 1;
+    }
+    console.log(tab);
+    str = JSON.stringify(tab);
+    Cookies.set('panier', str);
+
+}
+$(".suppression-recette").click(function () {
+    let monCookie = Cookies.getJSON('panier');
+    let id = $(this).data('id');
+    if (monCookie["recette"][id] >= 1) {
+        monCookie["recette"][id] -= 1;
+        Cookies.set('panier', JSON.stringify(monCookie));
+        location.reload();
+    }
+    if (monCookie["recette"][id] == 0) {
+        delete monCookie["recette"][id];
+        Cookies.set('panier', JSON.stringify(monCookie));
+        location.reload();
+    }
+    console.log(monCookie);
+})
+cookie = Cookies.getJSON('panier');
+if (cookie["recette"][0] == 0) {
+    console.log("cookie 0");
+} else {
+    console.log("cookie ok")
+}
 
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
@@ -145,7 +197,7 @@ function valideForm() {
                 } else {
                     document.querySelector('#err-sex').textContent = "";
                 }
-                
+
             });
 }
 ;
@@ -319,6 +371,11 @@ $('.category-ing').click(function () {
                         para = document.createElement('p');
                         para.textContent = element.prix + '€' + ' pour ' + element.qtx + ' ' + element.unit;
                         button = document.createElement('button');
+                        //button.className = "add-ing";
+                        //button.setAttribute("data-id", element.id);
+                        button.onclick = function () {
+                            addPanier(element.id);
+                        }
                         i = document.createElement('i');
                         i.className = "fas fa-cart-plus";
                         img.src = element.img;
