@@ -113,7 +113,7 @@ if (cookie["recette"][0] == 0) {
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
 /*************************************/
 
-function afficheFormulaire() {
+function afficheFormulaire() {//aller kéké
     $.post(
             'ajax.php', {
                 email: $("#emailIns").val(),
