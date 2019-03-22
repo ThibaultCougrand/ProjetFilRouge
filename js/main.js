@@ -29,7 +29,7 @@ $(".category-recipe").click(function () {
                     $("#les-recettes").append(figure);
                 });
             } else {
-                console.log('pas tableau');
+                console.log('erreur ajax');
             }
         }
     );
@@ -38,7 +38,6 @@ $(".category-recipe").click(function () {
 /*********************************************/
 /*PASSER LES INGREDIENTS DE RECETTE AU PANIER*/
 /*********************************************/
-
 $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
@@ -50,7 +49,6 @@ $(".ajout-panier").click(function () {
     if (tableauId['recette'] === undefined) {
         tableauId["recette"] = {};
     }
-
     if (tableauId["recette"][id] === undefined) {
         tableauId["recette"][id] = 1;
     } else {
@@ -89,6 +87,29 @@ function addPanier(id) {
     Cookies.set('panier', str);
 
 }
+$(".suppression-recette").click(function () {
+    let monCookie = Cookies.getJSON('panier');
+    let id = $(this).data('id');
+    if (monCookie["recette"][id] >= 1) {
+        monCookie["recette"][id] -= 1;
+        Cookies.set('panier', JSON.stringify(monCookie));
+        location.reload();
+    }
+    if (monCookie["recette"][id] == 0){
+        delete monCookie["recette"][id];
+        Cookies.set('panier', JSON.stringify(monCookie));
+        location.reload();
+    }
+    console.log(monCookie);
+})
+cookie = Cookies.getJSON('panier');
+if(cookie["recette"][0]==0){
+    console.log("cookie 0");
+}
+else{
+    console.log("cookie ok")
+}
+
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
 /*************************************/

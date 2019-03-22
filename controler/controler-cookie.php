@@ -1,2 +1,2 @@
 <?php
-$cookieroro = $_COOKIE
+$cookieroro = $_COOKIE;

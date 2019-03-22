@@ -72,11 +72,9 @@ article aside img {
   text-align: center;
   font-size: 2rem; }
 
-/* .ul-panier{
-    display: flex;
-    flex-direction: column;
-    justify-content:center; 
-} */
+.prix-total {
+  text-align: end; }
+
 .ingredient-modif {
   padding: 0 !important; }
 
