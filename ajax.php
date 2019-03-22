@@ -11,8 +11,8 @@ $data = [];
 
 //Permet de passer des informations dans le tableau data en fonction de l'"uc" qui à été requetté.
 switch ($uc) {
-    
-    /*REQUETTE PAGE RECETTE*/
+
+    /* REQUETTE PAGE RECETTE */
     case 'recipe':
         $id = filter_input(INPUT_POST, 'id');
         if ($id) {
@@ -25,8 +25,8 @@ switch ($uc) {
             $data['erreur'] = "pas d'id";
         }
         break;
-        
-    /*REQUETTE DE LA PAGE INSCRIPTION*/
+
+    /* REQUETTE DE LA PAGE INSCRIPTION */
     case 'signup':
         $email = filter_input(INPUT_POST, 'email');
         $modele = new ModeleSignUp();
@@ -34,7 +34,19 @@ switch ($uc) {
         $data['verif'] = (boolean) $verif;
         break;
 
-    /*REQUETTE DE LA PAGE PRODUIT*/
+    case 'signup2':
+        $email = filter_input(INPUT_POST, 'email');
+        $password = filter_input(INPUT_POST, 'password');
+        $verifEmail = filter_input(INPUT_POST, 'verifEmail');
+        $verifPassword = filter_input(INPUT_POST, 'verifPassword');
+        $name = filter_input(INPUT_POST, 'name');
+        $firstName = filter_input(INPUT_POST, 'firstName');
+        $age = filter_input(INPUT_POST, 'age');
+        $sex = filter_input(INPUT_POST, 'sex');
+        include_once 'controler/controler-signup.php';
+        break;
+
+    /* REQUETTE DE LA PAGE PRODUIT */
     case 'produit':
         $id = filter_input(INPUT_POST, 'id');
         //permet de recuperer la valeur de id envoyé grâce à la requête ajax
@@ -48,8 +60,8 @@ switch ($uc) {
             $data['erreur'] = "pas d'id romain ajax.php";
         }
         break;
-        
-    /*SI UC INVALIDE*/    
+
+    /* SI UC INVALIDE */
     default:
         $data['erreur'] = 'cas inconnue';
         break;

@@ -83,8 +83,10 @@ function afficheFormulaire() {
                         $("#buttonIns").hide();
                         $("#labelEmailIns").hide();
                         $("#emailIns").hide();
+                        $("#err-email").hide();
                         $("#labelPasswordIns").hide();
                         $("#passwordIns").hide();
+                        $("#err-password").hide();
                         afficheSuiteForm();
                     } else {
                         document.querySelector('#err-password').textContent = "Veuillez saisir un mot de passe";
@@ -96,10 +98,9 @@ function afficheFormulaire() {
 }
 
 /*Requette ajax pour valider l'inscription*/
-$('#submitIns').click(function (e) {
-    console.log($('#emailIns').val());
-    $POST(
-            'controler/controler-signup.php', {
+function valideForm() {
+    $.post(
+            'ajax.php', {
                 email: $('#emailIns').val(),
                 password: $('#passwordIns').val(),
                 verifEmail: $('#verifEmailIns').val(),
@@ -107,12 +108,57 @@ $('#submitIns').click(function (e) {
                 name: $('#nameIns').val(),
                 firstName: $('#firstNameIns').val(),
                 age: $('#ageIns').val(),
-                sex: $("input[@name=sexIns][@checked]").val()
+                sex: recupRadio(),
+                uc: 'signup2'
             },
             function (data) {
-
+                console.log(data);
+                var results = JSON.parse(data);
+                console.log(results.email);
+                if (results.email !== "") {
+                    document.querySelector('#err-verif-email').textContent = results.email;
+                } else {
+                    document.querySelector('#err-verif-email').textContent = "";
+                }
+                if (results.password !== "") {
+                    document.querySelector('#err-verif-password').textContent = results.password;
+                } else {
+                    document.querySelector('#err-verif-password').textContent = "";
+                }
+                if (results.name !== "") {
+                    document.querySelector('#err-name').textContent = results.name;
+                } else {
+                    document.querySelector('#err-name').textContent = "";
+                }
+                if (results.firstName !== "") {
+                    document.querySelector('#err-firstname').textContent = results.firstName;
+                } else {
+                    document.querySelector('#err-firstname').textContent = "";
+                }
+                if (results.age !== "") {
+                    document.querySelector('#err-age').textContent = results.age;
+                } else {
+                    document.querySelector('#err-age').textContent = "";
+                }
+                if (results.sex !== "") {
+                    document.querySelector('#err-sex').textContent = results.sex;
+                } else {
+                    document.querySelector('#err-sex').textContent = "";
+                }
+                
             });
-});
+}
+;
+
+function recupRadio() {
+    value = '';
+    for (i = 0; i < document.inscription.sexIns.length; i++) {
+        if (document.inscription.sexIns[i].checked) {
+            value = document.inscription.sexIns[i].value;
+        }
+    }
+    return value;
+}
 
 /*Fonction qui génère le formulaire d'inscription dans la page html*/
 function afficheSuiteForm() {
@@ -141,7 +187,7 @@ function afficheSuiteForm() {
     var labelVerifPassword = document.createElement('label');
     labelVerifPassword.textContent = "vérifiez votre mot de passe";
     var verifPassword = document.createElement('input');
-    verifPassword.type = 'text';
+    verifPassword.type = 'password';
     verifPassword.name = 'verifPasswordIns';
     verifPassword.id = 'verifPasswordIns';
     var errVerifPassword = document.createElement('p');
@@ -205,8 +251,10 @@ function afficheSuiteForm() {
     errSex.className = "mesErr";
     // bouton
     var button = document.createElement('input');
-    button.type = "submit";
+    button.type = "button";
     button.id = "submitIns";
+    button.addEventListener("click", valideForm, false);
+    //button.addEventListener('click', valideForm());
     button.value = "S'inscrire";
     button.form = "inscription";
 

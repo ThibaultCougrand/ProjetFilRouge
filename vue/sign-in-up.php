@@ -9,7 +9,7 @@
     </form>
     <div class="divider"></div>
     <div><h3>Inscription</h3></div>
-    <form class="inscription" id="inscription" action="index.php?loc=signup" method="POST" autocomplete="off">
+    <form name="inscription" class="inscription" id="inscription" action="index.php?loc=signup" method="POST" autocomplete="off">
         <label id="labelEmailIns">email:</label>
         <input type="email" id="emailIns" name="emailIns">
         <p id="err-email" class="mesErr"></p>
