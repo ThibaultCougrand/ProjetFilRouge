@@ -60,12 +60,13 @@ $(".ajout-panier").click(function () {
 $(".suppression-recette").click(function () {
     let monCookie = Cookies.getJSON('panier');
     let id = $(this).data('id');
-    if (monCookie["recette"][id] > 1) {
+    if (monCookie["recette"][id] >= 1) {
         monCookie["recette"][id] -= 1;
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
-    } else if (monCookie["recette"][id] == 0) {
-        monCookie.splice(id, 1);
+    }
+    if (monCookie["recette"][id] == 0) {
+        delete monCookie["recette"][id];
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
