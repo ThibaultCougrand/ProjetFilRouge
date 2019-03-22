@@ -29,7 +29,7 @@ $(".category-recipe").click(function () {
                     $("#les-recettes").append(figure);
                 });
             } else {
-                console.log('pas tableau');
+                console.log('erreur ajax');
             }
         }
     );
@@ -65,14 +65,20 @@ $(".suppression-recette").click(function () {
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
-    if (monCookie["recette"][id] == 0) {
+    if (monCookie["recette"][id] == 0){
         delete monCookie["recette"][id];
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
     console.log(monCookie);
 })
-
+cookie = Cookies.getJSON('panier');
+if(cookie["recette"][0]==0){
+    console.log("cookie 0");
+}
+else{
+    console.log("cookie ok")
+}
 
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
