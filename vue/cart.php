@@ -1,3 +1,16 @@
+<?php if ($cookie==null ||$data["recette"]==null && $data["produits"]==null ) {
+    ?>
+<article>
+    <div class="container-panier-vide">
+        <h2>Votre panier est vide</h2>
+        <a href="?loc=produits">Retourner à la séléction des produits ?</a>
+</article>
+</div>
+<?php
+
+} else {
+    if($data["recette"]!=null){   
+    ?>
 <article class="container-panier">
     <h1 class="titre-panier">Votre panier</h1>
     <?php
@@ -22,4 +35,7 @@
         }
     }
     ?>
-</article> 
+</article>
+<?php 
+}
+} ?> 
