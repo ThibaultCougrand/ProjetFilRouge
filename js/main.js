@@ -101,7 +101,7 @@ $(".suppression-recette").click(function () {
         location.reload();
     }
     console.log(monCookie);
-})
+});
 cookie = Cookies.getJSON('panier');
 if (cookie["recette"][0] === 0) {
     console.log("cookie 0");
@@ -199,8 +199,7 @@ function valideForm() {
                 }
 
             });
-}
-;
+};
 
 function recupRadio() {
     value = '';
