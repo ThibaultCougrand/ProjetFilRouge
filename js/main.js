@@ -166,36 +166,47 @@ function valideForm() {
             function (data) {
                 console.log(data);
                 var resultErr = JSON.parse(data);
+                var verif = 0;
                 console.log(resultErr.email);
                 if (resultErr.email !== "") {
                     document.querySelector('#err-verif-email').textContent = resultErr.email;
                 } else {
                     document.querySelector('#err-verif-email').textContent = "";
+                    verif++;
                 }
                 if (resultErr.password !== "") {
                     document.querySelector('#err-verif-password').textContent = resultErr.password;
                 } else {
                     document.querySelector('#err-verif-password').textContent = "";
+                    verif++;
                 }
                 if (resultErr.name !== "") {
                     document.querySelector('#err-name').textContent = resultErr.name;
                 } else {
                     document.querySelector('#err-name').textContent = "";
+                    verif++;
                 }
                 if (resultErr.firstName !== "") {
                     document.querySelector('#err-firstname').textContent = resultErr.firstName;
                 } else {
                     document.querySelector('#err-firstname').textContent = "";
+                    verif++;
                 }
                 if (resultErr.age !== "") {
                     document.querySelector('#err-age').textContent = resultErr.age;
                 } else {
                     document.querySelector('#err-age').textContent = "";
+                    verif++;
                 }
                 if (resultErr.sex !== "") {
                     document.querySelector('#err-sex').textContent = resultErr.sex;
                 } else {
                     document.querySelector('#err-sex').textContent = "";
+                    verif++;
+                }
+                if (verif === 6) {
+                    location.reload();
+                    verif = 0;
                 }
 
             });
