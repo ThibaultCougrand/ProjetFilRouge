@@ -226,7 +226,7 @@ function afficheSuiteForm() {
     /*création de mes éléments*/
     // verif email.
     var labelVerifEmail = document.createElement('label');
-    labelVerifEmail.textContent = "vérifiez votre email";
+    labelVerifEmail.textContent = "vérifiez votre email:";
     var verifEmail = document.createElement('input');
     verifEmail.type = 'text';
     verifEmail.name = 'verifEmailIns';
@@ -236,7 +236,7 @@ function afficheSuiteForm() {
     errVerifEmail.className = "mesErr";
     // verif password
     var labelVerifPassword = document.createElement('label');
-    labelVerifPassword.textContent = "vérifiez votre mot de passe";
+    labelVerifPassword.textContent = "vérifiez votre mot de passe:";
     var verifPassword = document.createElement('input');
     verifPassword.type = 'password';
     verifPassword.name = 'verifPasswordIns';
@@ -246,7 +246,7 @@ function afficheSuiteForm() {
     errVerifPassword.className = "mesErr";
     // nom
     var labelName = document.createElement('label');
-    labelName.textContent = "nom";
+    labelName.textContent = "nom:";
     var name = document.createElement('input');
     name.type = "text";
     name.name = "nameIns";
@@ -256,7 +256,7 @@ function afficheSuiteForm() {
     errName.className = "mesErr";
     // prenom
     var labelFirstNAme = document.createElement('label');
-    labelFirstNAme.textContent = "prénom";
+    labelFirstNAme.textContent = "prénom:";
     var firstName = document.createElement('input');
     firstName.type = "text";
     firstName.name = "firstNameIns";
@@ -266,11 +266,9 @@ function afficheSuiteForm() {
     errFirstName.className = "mesErr";
     // age
     var labelAge = document.createElement('label');
-    labelAge.textContent = "age";
+    labelAge.textContent = "date de naissance:";
     var age = document.createElement('input');
-    age.type = "number";
-    age.min = "1";
-    age.max = "99";
+    age.type = "date";
     age.name = "ageIns";
     age.id = 'ageIns';
     var errAge = document.createElement('p');
@@ -278,7 +276,7 @@ function afficheSuiteForm() {
     errAge.className = "mesErr";
     // sex
     var labelSex = document.createElement('label');
-    labelSex.textContent = "Sexe";
+    labelSex.textContent = "Sexe:";
     var sexF = document.createElement('input');
     sexF.type = "radio";
     sexF.name = "sexIns";
