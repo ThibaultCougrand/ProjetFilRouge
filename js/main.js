@@ -165,35 +165,35 @@ function valideForm() {
             },
             function (data) {
                 console.log(data);
-                var results = JSON.parse(data);
-                console.log(results.email);
-                if (results.email !== "") {
-                    document.querySelector('#err-verif-email').textContent = results.email;
+                var resultErr = JSON.parse(data);
+                console.log(resultErr.email);
+                if (resultErr.email !== "") {
+                    document.querySelector('#err-verif-email').textContent = resultErr.email;
                 } else {
                     document.querySelector('#err-verif-email').textContent = "";
                 }
-                if (results.password !== "") {
-                    document.querySelector('#err-verif-password').textContent = results.password;
+                if (resultErr.password !== "") {
+                    document.querySelector('#err-verif-password').textContent = resultErr.password;
                 } else {
                     document.querySelector('#err-verif-password').textContent = "";
                 }
-                if (results.name !== "") {
-                    document.querySelector('#err-name').textContent = results.name;
+                if (resultErr.name !== "") {
+                    document.querySelector('#err-name').textContent = resultErr.name;
                 } else {
                     document.querySelector('#err-name').textContent = "";
                 }
-                if (results.firstName !== "") {
-                    document.querySelector('#err-firstname').textContent = results.firstName;
+                if (resultErr.firstName !== "") {
+                    document.querySelector('#err-firstname').textContent = resultErr.firstName;
                 } else {
                     document.querySelector('#err-firstname').textContent = "";
                 }
-                if (results.age !== "") {
-                    document.querySelector('#err-age').textContent = results.age;
+                if (resultErr.age !== "") {
+                    document.querySelector('#err-age').textContent = resultErr.age;
                 } else {
                     document.querySelector('#err-age').textContent = "";
                 }
-                if (results.sex !== "") {
-                    document.querySelector('#err-sex').textContent = results.sex;
+                if (resultErr.sex !== "") {
+                    document.querySelector('#err-sex').textContent = resultErr.sex;
                 } else {
                     document.querySelector('#err-sex').textContent = "";
                 }

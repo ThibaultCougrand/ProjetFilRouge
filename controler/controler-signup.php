@@ -3,6 +3,8 @@ $modele = new ModeleSignUp();
 $user = new ClassUser();
 $verif = 0;
 
+$data['id'] = 1;
+
 if ($email === $verifEmail) {
     $user->setEmail($email);
     $data['email'] = "";
