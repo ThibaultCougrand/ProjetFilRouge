@@ -78,6 +78,9 @@ article aside img {
 .ingredient-modif {
   padding: 0 !important; }
 
+.container-panier-vide {
+  text-align: center; }
+
 /********** END-PANIER-CSS ************/
 /************ ICI DEBUT INGREDIENTS *************/
 .container-ing {

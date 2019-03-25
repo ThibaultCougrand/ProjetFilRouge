@@ -41,7 +41,10 @@ $(".category-recipe").click(function () {
 $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    var tableauId = {};
+    var tableauId = {
+        recette:{},
+        produits:{}
+    };
     monCookie = Cookies.get('panier');
     if (monCookie !== undefined) {
         tableauId = JSON.parse(monCookie);
@@ -68,7 +71,11 @@ $(".add-ing").on("click", function () {
 });
 
 function addPanier(id) {
-    var tab = {};
+    var tab = {
+        recette:{},
+        produits:{}
+    };
+    
 
     roroCookie = Cookies.get('panier');
     if (roroCookie !== undefined) {
