@@ -95,7 +95,7 @@ $(".suppression-recette").click(function () {
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
-    if (monCookie["recette"][id] == 0) {
+    if (monCookie["recette"][id] === 0) {
         delete monCookie["recette"][id];
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
@@ -103,10 +103,10 @@ $(".suppression-recette").click(function () {
     console.log(monCookie);
 })
 cookie = Cookies.getJSON('panier');
-if (cookie["recette"][0] == 0) {
+if (cookie["recette"][0] === 0) {
     console.log("cookie 0");
 } else {
-    console.log("cookie ok")
+    console.log("cookie ok");
 }
 
 /*************************************/
