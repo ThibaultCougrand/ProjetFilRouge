@@ -55,7 +55,7 @@ if ($data['produits'] != null) {
                     . ' ' . $article->prix() * $value . '€</li>';
             }
         }
-        echo '<li class="prix-total taille-filtre">Prix total' .$total. '€</li>';
+        echo '<li class="prix-total taille-filtre">Prix total : ' .$total. '€</li>';
         ?>
     </ul>
 </article>
