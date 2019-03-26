@@ -53,6 +53,7 @@ if ($data['produits'] != null) {
                 echo '<li class="taille-filtre un-ingredient ingredient-modif" data-id="' . $article->id() . '"><img src="' . $article->image() . '"><span>'
                     . $article->name() . " </span><span class=qtx-unite>" . $article->qtx() * $value . " " . $article->unit()
                     . ' ' . $article->prix() * $value . '€</li>';
+                    echo "<button class='suppression-produit' data-id=" . $key . ">Supprimer le produit ?</button>";
             }
         }
         echo '<li class="prix-total taille-filtre">Prix total : ' .$total. '€</li>';
