@@ -59,7 +59,7 @@ $(".ajout-panier").click(function () {
     }
     console.log(tableauId);
     str = JSON.stringify(tableauId);
-    Cookies.set('panier', str); // Création */
+    Cookies.set('panier', str,{ expires: 2 }); // Création */
 });
 
 /*********************************************/
@@ -91,7 +91,7 @@ function addPanier(id) {
     }
     console.log(tab);
     str = JSON.stringify(tab);
-    Cookies.set('panier', str);
+    Cookies.set('panier', str,{ expires: 2 });
 
 }
 $(".suppression-recette").click(function () {
@@ -109,13 +109,6 @@ $(".suppression-recette").click(function () {
     }
     console.log(monCookie);
 });
-cookie = Cookies.getJSON('panier');
-if (cookie["recette"][0] === 0) {
-    console.log("cookie 0");
-} else {
-    console.log("cookie ok");
-}
-
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
 /*************************************/

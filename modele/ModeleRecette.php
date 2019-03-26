@@ -4,7 +4,7 @@ class ModeleRecette extends ClassConnexion
     public function recipeCategory()
     {
         $array = [];
-        $req = parent::$bdd->query("SELECT category.name, category.id FROM `category_recipe` JOIN category ON category_recipe.id = category.id "); 
+        $req = parent::$bdd->query("SELECT category.name, category.id FROM `category_recipe` JOIN category ON category_recipe.id = category.id ORDER BY name"); 
         while ($donnees = $req->fetch()) {
             $recette = new ClassRecette();
             $recette->setId($donnees["id"]);
