@@ -379,6 +379,7 @@ function formConnexion() {
                 }
             });
 }
+
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INGREDIENTS*/
 /*************************************/

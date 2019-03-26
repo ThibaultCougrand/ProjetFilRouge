@@ -7,7 +7,7 @@
         if (!isset($_SESSION['id'])) {
             echo '<li><a href="index.php?loc=sign-in-up">Connexion</li></a>';
         } else {
-            echo '<li><a href="index.php?loc=cart">Espace client</li></a>';
+            echo '<li><a href="index.php?loc=account">Espace client</li></a>';
         }
         ?>
         <li><a href = "index.php?loc=cart">Panier</li></a>
