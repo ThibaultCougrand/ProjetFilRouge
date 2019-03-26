@@ -6,32 +6,32 @@ $(".category-recipe").click(function () {
     reset = $("#les-recettes");
     reset.html("");
     $.post(
-            'ajax.php', {
-                id: $(this).data("id"),
-                uc: 'recipe'
-            },
-            function (data) {
-                results = (JSON.parse(data));
-                if (Array.isArray(results)) {
-                    results.forEach(element => {
-                        console.log(element);
-                        figure = document.createElement('figure');
-                        lien = document.createElement('a');
-                        lien.href = "index.php?loc=one-recipe&id=" + element.id;
-                        img = document.createElement('div');
-                        figcaption = document.createElement('figcaption');
-                        img.className = "image-recette";
-                        img.style = "background-image: url(" + element.img + ")";
-                        figcaption.textContent = element.name;
-                        lien.append(img);
-                        figure.append(lien);
-                        figure.append(figcaption);
-                        $("#les-recettes").append(figure);
-                    });
-                } else {
-                    console.log('erreur ajax');
-                }
+        'ajax.php', {
+            id: $(this).data("id"),
+            uc: 'recipe'
+        },
+        function (data) {
+            results = (JSON.parse(data));
+            if (Array.isArray(results)) {
+                results.forEach(element => {
+                    console.log(element);
+                    figure = document.createElement('figure');
+                    lien = document.createElement('a');
+                    lien.href = "index.php?loc=one-recipe&id=" + element.id;
+                    img = document.createElement('div');
+                    figcaption = document.createElement('figcaption');
+                    img.className = "image-recette";
+                    img.style = "background-image: url(" + element.img + ")";
+                    figcaption.textContent = element.name;
+                    lien.append(img);
+                    figure.append(lien);
+                    figure.append(figcaption);
+                    $("#les-recettes").append(figure);
+                });
+            } else {
+                console.log('erreur ajax');
             }
+        }
     );
 });
 
@@ -42,8 +42,8 @@ $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
     var tableauId = {
-        recette:{},
-        produits:{}
+        recette: {},
+        produits: {}
     };
     monCookie = Cookies.get('panier');
     if (monCookie !== undefined) {
@@ -72,11 +72,9 @@ $(".add-ing").on("click", function () {
 
 function addPanier(id) {
     var tab = {
-        recette:{},
-        produits:{}
+        recette: {},
+        produits: {}
     };
-    
-
     roroCookie = Cookies.get('panier');
     if (roroCookie !== undefined) {
         tab = JSON.parse(roroCookie);
@@ -94,122 +92,133 @@ function addPanier(id) {
     Cookies.set('panier', str,{ expires: 2 });
 
 }
+
 $(".suppression-recette").click(function () {
+    supression("recette",".suppression-recette");
+});
+
+$(".suppression-produit").click(function () {
+    supression("produits",".suppression-produit");
+});
+
+function supression(key,param) {
+    console.log("ici suppresion recette")
     let monCookie = Cookies.getJSON('panier');
-    let id = $(this).data('id');
-    if (monCookie["recette"][id] >= 1) {
-        monCookie["recette"][id] -= 1;
+    let id = $(param).data('id');
+    if (monCookie[key][id] >= 1) {
+        monCookie[key][id] -= 1;
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
-    if (monCookie["recette"][id] === 0) {
-        delete monCookie["recette"][id];
+    if (monCookie[key][id] === 0) {
+        delete monCookie[key][id];
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
     console.log(monCookie);
-});
+};
+
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INSCRIPTION*/
 /*************************************/
 
 function afficheFormulaire() {
     $.post(
-            'ajax.php', {
-                email: $("#emailIns").val(),
-                uc: 'signup'
-            },
-            function (data) {
-                console.log(data);
-                var results = JSON.parse(data);
-                var email = $('#emailIns').val().toString();
-                console.log(!email.substring(email.indexOf("@"), email.length).includes("."));
-                if (email === "") {
-                    document.querySelector('#err-email').textContent = "Veuillez saisir un email";
-                } else if (!email.includes("@") || !email.substring(email.indexOf("@"), email.length).includes(".")) {
-                    document.querySelector('#err-email').textContent = "email invalide !";
-                } else if (results.verif === true) {
-                    document.querySelector('#err-email').textContent = "";
-                    if ($('#passwordIns').val() !== "") {
-                        document.querySelector('#err-password').textContent = "";
-                        $("#buttonIns").hide();
-                        $("#labelEmailIns").hide();
-                        $("#emailIns").hide();
-                        $("#err-email").hide();
-                        $("#labelPasswordIns").hide();
-                        $("#passwordIns").hide();
-                        $("#err-password").hide();
-                        afficheSuiteForm();
-                    } else {
-                        document.querySelector('#err-password').textContent = "Veuillez saisir un mot de passe";
-                    }
+        'ajax.php', {
+            email: $("#emailIns").val(),
+            uc: 'signup'
+        },
+        function (data) {
+            console.log(data);
+            var results = JSON.parse(data);
+            var email = $('#emailIns').val().toString();
+            console.log(!email.substring(email.indexOf("@"), email.length).includes("."));
+            if (email === "") {
+                document.querySelector('#err-email').textContent = "Veuillez saisir un email";
+            } else if (!email.includes("@") || !email.substring(email.indexOf("@"), email.length).includes(".")) {
+                document.querySelector('#err-email').textContent = "email invalide !";
+            } else if (results.verif === true) {
+                document.querySelector('#err-email').textContent = "";
+                if ($('#passwordIns').val() !== "") {
+                    document.querySelector('#err-password').textContent = "";
+                    $("#buttonIns").hide();
+                    $("#labelEmailIns").hide();
+                    $("#emailIns").hide();
+                    $("#err-email").hide();
+                    $("#labelPasswordIns").hide();
+                    $("#passwordIns").hide();
+                    $("#err-password").hide();
+                    afficheSuiteForm();
                 } else {
-                    document.querySelector('#err-email').textContent = "Email invalide !";
+                    document.querySelector('#err-password').textContent = "Veuillez saisir un mot de passe";
                 }
-            });
+            } else {
+                document.querySelector('#err-email').textContent = "Email invalide !";
+            }
+        });
 }
 
 /*Requette ajax pour valider l'inscription*/
 function valideForm() {
     $.post(
-            'ajax.php', {
-                email: $('#emailIns').val(),
-                password: $('#passwordIns').val(),
-                verifEmail: $('#verifEmailIns').val(),
-                verifPassword: $('#verifPasswordIns').val(),
-                name: $('#nameIns').val(),
-                firstName: $('#firstNameIns').val(),
-                age: $('#ageIns').val(),
-                sex: recupRadio(),
-                uc: 'signup2'
-            },
-            function (data) {
-                console.log(data);
-                var resultErr = JSON.parse(data);
-                var verif = 0;
-                console.log(resultErr.email);
-                if (resultErr.email !== "") {
-                    document.querySelector('#err-verif-email').textContent = resultErr.email;
-                } else {
-                    document.querySelector('#err-verif-email').textContent = "";
-                    verif++;
-                }
-                if (resultErr.password !== "") {
-                    document.querySelector('#err-verif-password').textContent = resultErr.password;
-                } else {
-                    document.querySelector('#err-verif-password').textContent = "";
-                    verif++;
-                }
-                if (resultErr.name !== "") {
-                    document.querySelector('#err-name').textContent = resultErr.name;
-                } else {
-                    document.querySelector('#err-name').textContent = "";
-                    verif++;
-                }
-                if (resultErr.firstName !== "") {
-                    document.querySelector('#err-firstname').textContent = resultErr.firstName;
-                } else {
-                    document.querySelector('#err-firstname').textContent = "";
-                    verif++;
-                }
-                if (resultErr.age !== "") {
-                    document.querySelector('#err-age').textContent = resultErr.age;
-                } else {
-                    document.querySelector('#err-age').textContent = "";
-                    verif++;
-                }
-                if (resultErr.sex !== "") {
-                    document.querySelector('#err-sex').textContent = resultErr.sex;
-                } else {
-                    document.querySelector('#err-sex').textContent = "";
-                    verif++;
-                }
-                if (verif === 6) {
-                    location.reload();
-                    verif = 0;
-                }
+        'ajax.php', {
+            email: $('#emailIns').val(),
+            password: $('#passwordIns').val(),
+            verifEmail: $('#verifEmailIns').val(),
+            verifPassword: $('#verifPasswordIns').val(),
+            name: $('#nameIns').val(),
+            firstName: $('#firstNameIns').val(),
+            age: $('#ageIns').val(),
+            sex: recupRadio(),
+            uc: 'signup2'
+        },
+        function (data) {
+            console.log(data);
+            var resultErr = JSON.parse(data);
+            var verif = 0;
+            console.log(resultErr.email);
+            if (resultErr.email !== "") {
+                document.querySelector('#err-verif-email').textContent = resultErr.email;
+            } else {
+                document.querySelector('#err-verif-email').textContent = "";
+                verif++;
+            }
+            if (resultErr.password !== "") {
+                document.querySelector('#err-verif-password').textContent = resultErr.password;
+            } else {
+                document.querySelector('#err-verif-password').textContent = "";
+                verif++;
+            }
+            if (resultErr.name !== "") {
+                document.querySelector('#err-name').textContent = resultErr.name;
+            } else {
+                document.querySelector('#err-name').textContent = "";
+                verif++;
+            }
+            if (resultErr.firstName !== "") {
+                document.querySelector('#err-firstname').textContent = resultErr.firstName;
+            } else {
+                document.querySelector('#err-firstname').textContent = "";
+                verif++;
+            }
+            if (resultErr.age !== "") {
+                document.querySelector('#err-age').textContent = resultErr.age;
+            } else {
+                document.querySelector('#err-age').textContent = "";
+                verif++;
+            }
+            if (resultErr.sex !== "") {
+                document.querySelector('#err-sex').textContent = resultErr.sex;
+            } else {
+                document.querySelector('#err-sex').textContent = "";
+                verif++;
+            }
+            if (verif === 6) {
+                location.reload();
+                verif = 0;
+            }
 
-            });
+        });
 };
 
 function recupRadio() {
@@ -359,50 +368,50 @@ $('.category-ing').click(function () {
     reset = $('#les-articles');
     reset.html(""); //me permet de reset la class qui contient les images, names etc
     $.post(
-            'ajax.php', {//permet de pointe vers la page ajax.php
-                id: $(this).data("id"), //envoie la valeur de $id dans ajax.php
-                uc: 'produit' //permet de switch dans le ajax.php 
-            },
-            function (data) {
-                //retour de data dans ajax.php
-                results = (JSON.parse(data)); //JE PARSE MON TABLEAU EN JSON
-                if (Array.isArray(results)) {
-                    results.forEach(element => {
-                        console.log(data);
-                        figure = document.createElement('figure');
-                        lien = document.createElement('a');
-                        lien.href = "index.php?loc=produits&id=" + element.id;
-                        img = document.createElement('img');
-                        figcaption = document.createElement('figcaption');
-                        div = document.createElement('div');
-                        div.className = "wrap-button";
-                        para = document.createElement('p');
-                        para.textContent = element.prix + '€' + ' pour ' + element.qtx + ' ' + element.unit;
-                        button = document.createElement('button');
-                        //button.className = "add-ing";
-                        //button.setAttribute("data-id", element.id);
-                        button.onclick = function () {
-                            addPanier(element.id);
-                        }
-                        i = document.createElement('i');
-                        i.className = "fas fa-cart-plus";
-                        img.src = element.img;
-                        figcaption.textContent = element.name;
+        'ajax.php', { //permet de pointe vers la page ajax.php
+            id: $(this).data("id"), //envoie la valeur de $id dans ajax.php
+            uc: 'produit' //permet de switch dans le ajax.php 
+        },
+        function (data) {
+            //retour de data dans ajax.php
+            results = (JSON.parse(data)); //JE PARSE MON TABLEAU EN JSON
+            if (Array.isArray(results)) {
+                results.forEach(element => {
+                    console.log(data);
+                    figure = document.createElement('figure');
+                    lien = document.createElement('a');
+                    lien.href = "index.php?loc=produits&id=" + element.id;
+                    img = document.createElement('img');
+                    figcaption = document.createElement('figcaption');
+                    div = document.createElement('div');
+                    div.className = "wrap-button";
+                    para = document.createElement('p');
+                    para.textContent = element.prix + '€' + ' pour ' + element.qtx + ' ' + element.unit;
+                    button = document.createElement('button');
+                    //button.className = "add-ing";
+                    //button.setAttribute("data-id", element.id);
+                    button.onclick = function () {
+                        addPanier(element.id);
+                    }
+                    i = document.createElement('i');
+                    i.className = "fas fa-cart-plus";
+                    img.src = element.img;
+                    figcaption.textContent = element.name;
 
-                        button.append(i);
-                        div.append(para);
-                        div.append(button);
-                        lien.append(img);
-                        figure.append(lien);
-                        figure.append(figcaption);
-                        figure.append(div);
-                        $('#les-articles').append(figure);
+                    button.append(i);
+                    div.append(para);
+                    div.append(button);
+                    lien.append(img);
+                    figure.append(lien);
+                    figure.append(figcaption);
+                    figure.append(div);
+                    $('#les-articles').append(figure);
 
-                    });
-                } else {
-                    console.log('requête ajax romain null');
-                }
-            });
+                });
+            } else {
+                console.log('requête ajax romain null');
+            }
+        });
     $(".image-recette").click(function () {
 
     });

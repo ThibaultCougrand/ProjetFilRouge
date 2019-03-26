@@ -81,6 +81,9 @@ article aside img {
 .container-panier-vide {
   text-align: center; }
 
+.ul-panier {
+  list-style: none; }
+
 /********** END-PANIER-CSS ************/
 /************ ICI DEBUT INGREDIENTS *************/
 .container-ing {

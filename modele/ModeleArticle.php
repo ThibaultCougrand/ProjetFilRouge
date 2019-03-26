@@ -21,10 +21,36 @@ class ModeleArticle extends ClassConnexion
             $articles->setPrix($donnee['prix']);
             $articles->setUnit($donnee['unite']);
             $articles->setImage($donnee['image']);
-            
+
             array_push($array, $articles);
         }
         return $array;
+    }
+
+    public function readArticleById($id)
+    {
+       // $array = [];
+        $req = parent::$bdd->prepare("SELECT article.id, ingredients.name, article.qtx, article.prix, 
+        article.image, unit.unite 
+        FROM `article` 
+        JOIN ingredients ON ingredients.id=article.id_ing
+        JOIN unit ON article.id_unite = unit.id
+         WHERE article.id = :id ");
+        $req->bindParam(':id', $id);
+        $req->execute();
+        $articles = false;
+        while ($donnee = $req->fetch()) {
+            $articles = new ClassArticle();
+            $articles->setId($donnee['id']);
+            $articles->setName($donnee['name']);
+            $articles->setQtx($donnee['qtx']);
+            $articles->setPrix($donnee['prix']);
+            $articles->setUnit($donnee['unite']);
+            $articles->setImage($donnee['image']);
+
+            //array_push($array, $articles);
+        }
+        return $articles;
     }
 
     public function categoryOfIngredients()
@@ -60,11 +86,9 @@ class ModeleArticle extends ClassConnexion
             $articles->setPrix($donnee['prix']);
             $articles->setUnit($donnee['unite']);
             $articles->setImage($donnee['image']);
-            
+
             array_push($array, $articles);
         }
         return $array;
     }
-    
 }
-

@@ -1,2 +1,0 @@
-<?php
-$cookieroro = $_COOKIE;
