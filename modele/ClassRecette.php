@@ -37,8 +37,13 @@ class ClassRecette
     }
     public function setImage($image)
     {
-        $this->image = $image;
+        if($image==null){
+            $this->image="https://upload.wikimedia.org/wikipedia/fr/thumb/d/df/Logo_Chef%2C_la_recette_%21.jpg/280px-Logo_Chef%2C_la_recette_%21.jpg";
+        }else{
 
+            
+        $this->image = $image;
+        }
         return $this;
     }
 

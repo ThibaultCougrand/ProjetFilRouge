@@ -53,6 +53,9 @@ switch ($loc) {
     case 'cart':
         include_once "controler/controler-cart.php";
         break;
+        case 'resume-cart':
+        include_once "controler/controler-resume-cart.php";
+        break;
     default:
         break;
 }
