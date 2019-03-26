@@ -1,4 +1,4 @@
-<?php if ($cookie==null ||$data["recette"]==null && $data["produits"]==null ) {
+<?php if ($cookie==null ||$data["recette"]==null && $data["produits"]==null) {
     ?>
 <article>
     <div class="container-panier-vide">
@@ -9,7 +9,7 @@
 <?php
 
 } else {
-    if($data["recette"]!=null){   
+    if($data["recette"]!=null){
     ?>
 <article class="container-panier">
     <h1 class="titre-panier">Votre panier</h1>
@@ -38,4 +38,6 @@
 </article>
 <?php 
 }
-} ?> 
+} ?>
+
+<a class="final-cmd" href="?loc=resume-cart">Finaliser la commande</a>
