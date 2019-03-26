@@ -34,7 +34,7 @@ if (!empty($firstName)) {
     $data['firstName'] = "Veuillez saisir un prenom";
 }
 if (!empty($age)) {
-    $user->setAge($age);
+    $user->setBirthdate($age);
     $data['age'] = "";
     $verif++;
 } else {

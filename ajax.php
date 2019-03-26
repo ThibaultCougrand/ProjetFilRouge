@@ -26,14 +26,13 @@ switch ($uc) {
         }
         break;
 
-    /* REQUETTE DE LA PAGE INSCRIPTION */
+    /* REQUETTES DE LA PAGE INSCRIPTION */
     case 'signup':
         $email = filter_input(INPUT_POST, 'email');
         $modele = new ModeleSignUp();
         $verif = $modele->verifEmailExist($email);
         $data['verif'] = (boolean) $verif;
         break;
-
     case 'signup2':
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
@@ -45,7 +44,13 @@ switch ($uc) {
         $sex = filter_input(INPUT_POST, 'sex');
         include_once 'controler/controler-signup.php';
         break;
-
+    
+    /* REQUETTE DE LA PAGE CONNECTION */
+    case 'signin':
+        include_once 'controler/controler-signin.php';
+        $data['verif'] = (boolean) $error;
+        break;
+    
     /* REQUETTE DE LA PAGE PRODUIT */
     case 'produit':
         $id = filter_input(INPUT_POST, 'id');

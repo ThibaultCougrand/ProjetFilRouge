@@ -42,8 +42,8 @@ $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
     var tableauId = {
-        recette:{},
-        produits:{}
+        recette: {},
+        produits: {}
     };
     monCookie = Cookies.get('panier');
     if (monCookie !== undefined) {
@@ -72,10 +72,10 @@ $(".add-ing").on("click", function () {
 
 function addPanier(id) {
     var tab = {
-        recette:{},
-        produits:{}
+        recette: {},
+        produits: {}
     };
-    
+
 
     roroCookie = Cookies.get('panier');
     if (roroCookie !== undefined) {
@@ -116,9 +116,9 @@ if (cookie["recette"][0] === 0) {
     console.log("cookie ok");
 }
 
-/*************************************/
-/*REQUETTE AJAX POUR PAGE INSCRIPTION*/
-/*************************************/
+/********************************/
+/*REQUETTE AJAX POUR INSCRIPTION*/
+/********************************/
 
 function afficheFormulaire() {
     $.post(
@@ -217,7 +217,8 @@ function valideForm() {
                 }
 
             });
-};
+}
+;
 
 function recupRadio() {
     value = '';
@@ -357,6 +358,25 @@ function afficheSuiteForm() {
     $('#inscription').append(button);
 }
 
+/*******************************/
+/*REQUETTE AJAX POUR CONNECTION*/
+/*******************************/
+
+function formConnexion() {
+    $.post(
+            'ajax.php', {
+                email: $('input[name="emailCo"]').val(),
+                password: $('input[name="passwordCo"]').val(),
+                uc: 'signin'
+            },
+            function (data) {
+                console.log(data);
+                var results = JSON.parse(data);
+                if (results.verif === true) {
+                    document.querySelector('#err-log').textContent = "Identifiants incorrects";
+                }
+            });
+}
 /*************************************/
 /*REQUETTE AJAX POUR PAGE INGREDIENTS*/
 /*************************************/

@@ -36,7 +36,7 @@ class ModeleSignUp extends ClassConnexion {
                 'password' => $user->password(),
                 'name' => $user->name(),
                 'first_name' => $user->firstName(),
-                'age' => $user->age(),
+                'age' => $user->birthdate(),
                 'sex' => $user->sex()
             ));
 //            if ($result == true) {

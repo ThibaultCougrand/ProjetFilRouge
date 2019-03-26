@@ -7,14 +7,14 @@
  */
 class ClassUser {
 
-    private $id, $email, $password, $name, $firstName, $age, $sex;
+    private $id, $email, $password, $name, $firstName, $birthdate, $sex;
 
     function id() {
         return $this->id;
     }
 
     function setId($id) {
-        return $this->id = $id;
+        $this->id = $id;
     }
 
     function email() {
@@ -22,7 +22,7 @@ class ClassUser {
     }
 
     function setEmail($email) {
-        return $this->email = $email;
+        $this->email = $email;
     }
 
     function password() {
@@ -30,7 +30,7 @@ class ClassUser {
     }
 
     function setPassword($password) {
-        return $this->password = $password;
+        $this->password = $password;
     }
 
     function name() {
@@ -49,12 +49,12 @@ class ClassUser {
         $this->firstName = $firstName;
     }
     
-    function age() {
-        return $this->age;
+    function birthdate() {
+        return $this->birthdate;
     }
     
-    function setAge($age) {
-        $this->age = $age;
+    function setBirthdate($age) {
+        $this->birthdate = $age;
     }
     
     function sex() {
