@@ -41,7 +41,10 @@ $(".category-recipe").click(function () {
 $(".ajout-panier").click(function () {
     let params = new URLSearchParams(document.location.search);
     let id = params.get("id");
-    var tableauId = {};
+    var tableauId = {
+        recette:{},
+        produits:{}
+    };
     monCookie = Cookies.get('panier');
     if (monCookie !== undefined) {
         tableauId = JSON.parse(monCookie);
@@ -68,7 +71,11 @@ $(".add-ing").on("click", function () {
 });
 
 function addPanier(id) {
-    var tab = {};
+    var tab = {
+        recette:{},
+        produits:{}
+    };
+    
 
     roroCookie = Cookies.get('panier');
     if (roroCookie !== undefined) {
@@ -95,18 +102,18 @@ $(".suppression-recette").click(function () {
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
-    if (monCookie["recette"][id] == 0) {
+    if (monCookie["recette"][id] === 0) {
         delete monCookie["recette"][id];
         Cookies.set('panier', JSON.stringify(monCookie));
         location.reload();
     }
     console.log(monCookie);
-})
+});
 cookie = Cookies.getJSON('panier');
-if (cookie["recette"][0] == 0) {
+if (cookie["recette"][0] === 0) {
     console.log("cookie 0");
 } else {
-    console.log("cookie ok")
+    console.log("cookie ok");
 }
 
 /*************************************/
@@ -165,42 +172,52 @@ function valideForm() {
             },
             function (data) {
                 console.log(data);
-                var results = JSON.parse(data);
-                console.log(results.email);
-                if (results.email !== "") {
-                    document.querySelector('#err-verif-email').textContent = results.email;
+                var resultErr = JSON.parse(data);
+                var verif = 0;
+                console.log(resultErr.email);
+                if (resultErr.email !== "") {
+                    document.querySelector('#err-verif-email').textContent = resultErr.email;
                 } else {
                     document.querySelector('#err-verif-email').textContent = "";
+                    verif++;
                 }
-                if (results.password !== "") {
-                    document.querySelector('#err-verif-password').textContent = results.password;
+                if (resultErr.password !== "") {
+                    document.querySelector('#err-verif-password').textContent = resultErr.password;
                 } else {
                     document.querySelector('#err-verif-password').textContent = "";
+                    verif++;
                 }
-                if (results.name !== "") {
-                    document.querySelector('#err-name').textContent = results.name;
+                if (resultErr.name !== "") {
+                    document.querySelector('#err-name').textContent = resultErr.name;
                 } else {
                     document.querySelector('#err-name').textContent = "";
+                    verif++;
                 }
-                if (results.firstName !== "") {
-                    document.querySelector('#err-firstname').textContent = results.firstName;
+                if (resultErr.firstName !== "") {
+                    document.querySelector('#err-firstname').textContent = resultErr.firstName;
                 } else {
                     document.querySelector('#err-firstname').textContent = "";
+                    verif++;
                 }
-                if (results.age !== "") {
-                    document.querySelector('#err-age').textContent = results.age;
+                if (resultErr.age !== "") {
+                    document.querySelector('#err-age').textContent = resultErr.age;
                 } else {
                     document.querySelector('#err-age').textContent = "";
+                    verif++;
                 }
-                if (results.sex !== "") {
-                    document.querySelector('#err-sex').textContent = results.sex;
+                if (resultErr.sex !== "") {
+                    document.querySelector('#err-sex').textContent = resultErr.sex;
                 } else {
                     document.querySelector('#err-sex').textContent = "";
+                    verif++;
+                }
+                if (verif === 6) {
+                    location.reload();
+                    verif = 0;
                 }
 
             });
-}
-;
+};
 
 function recupRadio() {
     value = '';
@@ -227,7 +244,7 @@ function afficheSuiteForm() {
     /*création de mes éléments*/
     // verif email.
     var labelVerifEmail = document.createElement('label');
-    labelVerifEmail.textContent = "vérifiez votre email";
+    labelVerifEmail.textContent = "vérifiez votre email:";
     var verifEmail = document.createElement('input');
     verifEmail.type = 'text';
     verifEmail.name = 'verifEmailIns';
@@ -237,7 +254,7 @@ function afficheSuiteForm() {
     errVerifEmail.className = "mesErr";
     // verif password
     var labelVerifPassword = document.createElement('label');
-    labelVerifPassword.textContent = "vérifiez votre mot de passe";
+    labelVerifPassword.textContent = "vérifiez votre mot de passe:";
     var verifPassword = document.createElement('input');
     verifPassword.type = 'password';
     verifPassword.name = 'verifPasswordIns';
@@ -247,7 +264,7 @@ function afficheSuiteForm() {
     errVerifPassword.className = "mesErr";
     // nom
     var labelName = document.createElement('label');
-    labelName.textContent = "nom";
+    labelName.textContent = "nom:";
     var name = document.createElement('input');
     name.type = "text";
     name.name = "nameIns";
@@ -257,7 +274,7 @@ function afficheSuiteForm() {
     errName.className = "mesErr";
     // prenom
     var labelFirstNAme = document.createElement('label');
-    labelFirstNAme.textContent = "prénom";
+    labelFirstNAme.textContent = "prénom:";
     var firstName = document.createElement('input');
     firstName.type = "text";
     firstName.name = "firstNameIns";
@@ -267,11 +284,9 @@ function afficheSuiteForm() {
     errFirstName.className = "mesErr";
     // age
     var labelAge = document.createElement('label');
-    labelAge.textContent = "age";
+    labelAge.textContent = "date de naissance:";
     var age = document.createElement('input');
-    age.type = "number";
-    age.min = "1";
-    age.max = "99";
+    age.type = "date";
     age.name = "ageIns";
     age.id = 'ageIns';
     var errAge = document.createElement('p');
@@ -279,7 +294,7 @@ function afficheSuiteForm() {
     errAge.className = "mesErr";
     // sex
     var labelSex = document.createElement('label');
-    labelSex.textContent = "Sexe";
+    labelSex.textContent = "Sexe:";
     var sexF = document.createElement('input');
     sexF.type = "radio";
     sexF.name = "sexIns";

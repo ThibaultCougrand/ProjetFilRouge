@@ -30,7 +30,7 @@ class ModeleSignUp extends ClassConnexion {
 
     public function inscription(ClassUser $user) {
         try {
-            $req = parent::$bdd->prepare('INSERT INTO `users`( `email`, `password`, `name`, `first_name`, `age`, `sex`) VALUES (:email,:password,:name,:first_name,:age,:sex)');
+            $req = parent::$bdd->prepare('INSERT INTO `users`( `email`, `password`, `name`, `first_name`, `birthdate`, `sexe`) VALUES (:email,:password,:name,:first_name,:age,:sex)');
             $result = $req->execute(array(
                 'email' => $user->email(),
                 'password' => $user->password(),
@@ -39,11 +39,11 @@ class ModeleSignUp extends ClassConnexion {
                 'age' => $user->age(),
                 'sex' => $user->sex()
             ));
-            if ($result == true) {
-                echo "Succes";
-            } else {
-                echo "erreur";
-            }
+//            if ($result == true) {
+//                echo "Succes";
+//            } else {
+//                echo "erreur";
+//            }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

@@ -1,3 +1,16 @@
+<?php if ($cookie == null || $data["recette"] == null && $data["produits"] == null) {
+    ?>
+<article>
+    <div class="container-panier-vide">
+        <h2>Votre panier est vide</h2>
+        <a href="?loc=produits">Retourner à la séléction des produits ?</a>
+</article>
+</div>
+<?php
+
+} else {
+    if ($data["recette"] != null) {
+        ?>
 <article class="container-panier">
     <h1 class="titre-panier">Votre panier</h1>
     <?php
@@ -22,4 +35,30 @@
         }
     }
     ?>
-</article> 
+</article>
+<?php 
+}
+if ($data['produits'] != null) {
+    ?>
+<article class="container-panier">
+    <h1 class="titre-panier">Vos ingrédients</h1>
+    <ul class="ul-panier">
+        <?php
+       $total=0;
+        foreach ($data['produits'] as $key => $value) {
+             
+             $article = $produits->readArticleById($key);
+            $total += $article->prix() * $value;
+            if ($article != false) {
+                echo '<li class="taille-filtre un-ingredient ingredient-modif" data-id="' . $article->id() . '"><img src="' . $article->image() . '"><span>'
+                    . $article->name() . " </span><span class=qtx-unite>" . $article->qtx() * $value . " " . $article->unit()
+                    . ' ' . $article->prix() * $value . '€</li>';
+            }
+        }
+        echo '<li class="prix-total taille-filtre">Prix total' .$total. '€</li>';
+        ?>
+    </ul>
+</article>
+<?php 
+}
+}
