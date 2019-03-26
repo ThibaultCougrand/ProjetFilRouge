@@ -374,6 +374,8 @@ function formConnexion() {
                 var results = JSON.parse(data);
                 if (results.verif === true) {
                     document.querySelector('#err-log').textContent = "Identifiants incorrects";
+                } else {
+                    location.replace("http://localhost/ProjetFilRouge/index.php?loc=home");
                 }
             });
 }

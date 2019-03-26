@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once 'controler/Autoloader.php';
 Autoloader::register();
 
@@ -48,6 +48,7 @@ switch ($uc) {
     /* REQUETTE DE LA PAGE CONNECTION */
     case 'signin':
         include_once 'controler/controler-signin.php';
+        $loc = 'signup';
         $data['verif'] = (boolean) $error;
         break;
     

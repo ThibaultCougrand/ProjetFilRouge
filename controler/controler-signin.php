@@ -11,7 +11,7 @@ $user->setEmail($email);
 $user->setPassword($password);
 
 $modele->connexion($user);
-
+//var_dump($user);
 if ($user->id() > 0) {
     $_SESSION['id'] = $user->id();
     $_SESSION['name'] = $user->name();
